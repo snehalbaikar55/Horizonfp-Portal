@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="39" viewBox="0 0 40 39">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g transform="translate(-38 -880) translate(-62 -118) translate(86 666) translate(0 317) translate(14.7 16.39) translate(0 15.46)">
+                                <circle cx="10.43" cy="10.29" r="10.29" fill="#9684E6" fill-rule="nonzero"/>
+                                <path stroke="#5E40E0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.423" d="M10.43 3.99L10.43 11.025 15.68 8.96"/>
+                            </g>
+                            <path stroke="#5E40E0" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.423" d="M8.47 12.94c-.595-1.435-.98-2.905-1.085-4.515-.21-3.08.84-5.705 3.115-7.77 1.015-.945 2.555-.84 3.535.14 1.435 1.4 2.87 2.8 4.27 4.235 1.4 1.4 1.4 2.73.035 4.165l-.28.28c-.49.49-.98 1.015-1.505 1.505-.315.28-.28.49-.14.84.805 1.645 1.855 3.15 3.115 4.48 2.135 2.345 4.585 4.34 7.595 5.985.805-.84 1.575-1.715 2.415-2.555.98-1.015 2.31-.98 3.325-.035l4.515 4.41c1.155 1.12 1.26 2.765.07 4.025-2.415 2.52-5.25 3.115-8.54 2.38-1.925-.42-3.71-1.12-5.39-1.96" transform="translate(-38 -880) translate(-62 -118) translate(86 666) translate(0 317) translate(14.7 16.39)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

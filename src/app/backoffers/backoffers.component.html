@@ -1,0 +1,55 @@
+<section>
+    <div class="row mainrow">
+        <div class="col-12">
+            <div class="backoffers">
+                
+                <div class="mdiv">
+                    <div class="row boslidesrow">
+                        <div class="boslidesrowheading">
+                            <h4>Bank Offers</h4>
+                        </div>
+                        <div class="boslides">
+                            <owl-carousel-o [options]="bankOptions">
+                                <ng-template carouselSlide *ngFor="let data of bankimage">
+                                    <div routerLink="">
+                                        <div class="card">
+                                            <div class="overflow-hidden imgrate">
+                                                <img src="{{data.img}}" onerror="this.src='assets/defaultimg/himg.PNG';" class="bankimg" alt="...">
+                                                <div>
+                                                    {{data.irate}} %
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                
+                
+                            </owl-carousel-o>
+                        </div>
+                    </div>
+                    <div class="row textrowcard">
+                        <div class="col-9">
+                            <div class="row imgtextbtn">
+                                <div class="col-3"><img src="assets/bank/soffert.png" class="soimg"></div>
+                                <div class="col-5">Avail home loans up to Rs. 10 crore with lowest interest rates.</div>
+                                <div class="col-4">
+                                    <button class="btn btn-primary btn-lg cnbtn">Contact Now</button>
+                                </div>
+                            </div>
+                            <div class="row onlytext">
+                                <div class="col-3"></div>
+                                <div class="col-5 cahlo">Check All Home Loan Offers</div>
+                                <div class="col-4"></div>
+                            </div>
+                        </div>
+                        <div class="col-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+    
+        </div>
+    </div>
+</section>
+<router-outlet></router-outlet>

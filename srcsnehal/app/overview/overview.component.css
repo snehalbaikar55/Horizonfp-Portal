@@ -1,0 +1,33 @@
+.hf-overview-container {
+    border: 20px solid #d0e1fa;
+    padding: 20px;
+    background-color: white;    
+}
+
+.hf-hor-line{
+    margin: 0!important;
+}
+ul{
+    color:#4c4c4c
+}
+.hf-o-card-txt{
+    color: darkgrey;
+    font-size: 16px;
+}
+.hf-o-card-txt span{
+    color: rgb(10, 10, 10);
+    font-weight: 400;
+    font-size: 16px;
+    color: #4c4c4c;
+}
+.hf-single-abt-txt{
+    font-size: 16px;
+    color: #4c4c4c;
+}
+.hf-overview-txt ul li{
+    font-size: .95rem;
+    line-height: 21px;
+    letter-spacing: .03rem;
+    color: #565656;
+    font-family: Rubik !important;
+}

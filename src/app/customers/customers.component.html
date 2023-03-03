@@ -1,0 +1,42 @@
+
+<section class="articles-base-container">
+    <div class="container">
+        <div class="hf-top-p-coll-txt pb-3">
+            <h1><span class="hf-textblue">Meet Our</span><span class="aftext">Users</span></h1>
+        </div>
+
+
+        <owl-carousel-o [options]="customerOptions">
+            <ng-template carouselSlide *ngFor="let i of userReview">
+                <div routerLink="" class="hf-card-blk">
+                    <div class="card maincard shadow mb-5 bg-body rounded">
+                        <div class="row maincardus">
+                            <div class="col maincardusimg">
+                                <img src="assets\articles\users\{{i.img}}" class="card-img-top maincardusimgog" alt="...">
+                            </div>
+                            <div class="col">
+                                <!--| reducelength:10-->
+                                <div class="row">{{i.name | reducelength:10}}</div>    
+                                <div class="row">
+                                    <div class="small-ratings">
+                                        <i class="fa fa-star rating-color"></i>
+                                        <i class="fa fa-star rating-color"></i>
+                                        <i class="fa fa-star rating-color"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="cardbody">
+                          <p class="card-text"><span class="maincardq">“</span> {{i.review | reducelength:75}}  <span class="maincardq">”</span></p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+
+
+
+    </div>
+</section>

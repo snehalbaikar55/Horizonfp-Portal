@@ -1,0 +1,296 @@
+<div class="">
+    <div class="mt-5"> </div>
+    <div class="p-1 hf-bg-blue position-fixed w-100 hf-fix-search-bar">
+        <div class="hf-search-bar p-3">
+
+            <div class="container">
+                <div class="btn-group mt-3 mb-3 w-50">
+                    <button type="button" class="btn btn-secondary btn-md dropdown-toggle" data-bs-toggle="dropdown" disabled>
+                        Buy
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Rent</a></li>
+                        <li><a class="dropdown-item" href="#">Agent</a></li>
+                        <li><a class="dropdown-item" href="#">Project</a></li>
+                    </ul>
+                    <input type="text" class="form-control w-100" name="searchbyloc" placeholder="  Search by location or Property Name" [(ngModel)]=searchbyloc>
+                </div>
+
+
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        BHK
+                    </button>
+                    <ul class="dropdown-menu p-3">
+                        <div class="form-check" *ngFor="let bk of bhkvalue">
+                            <input class="form-check-input" name="bhk_search" type="checkbox" value="{{bk}}" (change)="onCheckboxChange($event)">{{bk}} &nbsp; BHK
+
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" aria-expanded="false" (click)="onClickdrp();">
+                        Budget
+                    </button>
+                    <ul class="dropdown-menu p-3" id="drp" [ngClass]="status ? 'showdrp' : 'hidedrp'">
+                        <div class="custom-slider">
+                            <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (valueChange)="onpricefilter($event);"></ngx-slider>
+                        </div>
+                        <div class="d-flex">
+                            <select class="form-select mt-3" aria-label="Default select example" [ngModel]="minValue" (change)="onchangeminprice($event)" style="margin-right: 20px;">
+                                <!-- <option selected>{{minValue}}</option> -->
+                                <option value="{{p.price_converted/100000}}" *ngFor="let p of price ;let i = index">{{p.price}}</option>
+                            </select>
+                            <select class="form-select mt-3" aria-label="Default select example" [ngModel]="maxValue" (change)="onchangemaxprice($event)">
+                                <!-- <option selected>{{maxValue}}</option> -->
+                                <option value="{{m.price_converted/100000}}" *ngFor="let m of price ;let j = index">{{m.price}}</option>
+                            </select>
+                        </div>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Property Type
+                    </button>
+                    <ul class="dropdown-menu p-3">
+                        <div class="form-check" *ngFor="let ptype of protype">
+                            <input type="checkbox" class="form-check-input" name="protypesearch" value="{{ptype}}" (click)="onCheckboxChangeProp($event)">{{ptype}}
+
+                        </div>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-md dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Construction Status
+                    </button>
+                    <ul class="dropdown-menu p-3">
+                        <div class="form-check" *ngFor="let ctype of conType,let i = index">
+                            <input type="checkbox" class="form-check-input" value="{{ctype}}" id="status{{i}}" name="conTypesearch" [ngModel]="selectedIndex === i" (change)="onCheckboxChangeconstruction($event);">{{ctype}}
+
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-md" type="button" (click)="onclickclearfilter()">
+                        Clear Filter
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="hf-abt-profile-sec pb-5 ">
+        <div class="container">
+            <div class="hf-breadcrumb p-3">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Property for Sale in Mumbai</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mt-5">
+
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="hf-no-data" [innerHTML]="dynamicData"></div>
+                        <ng-container *ngIf="(propertyData| searchresult:bhk_search:conTypesearch:protypesearch:searchbyloc) as result">
+                            <div class="col-md-12 mb-5" *ngFor="let data of propertyData| searchresult:bhk_search:conTypesearch:protypesearch:searchbyloc|paginate:{itemsPerPage: 5, currentPage:p}">
+                                <div class="hf-search-content">
+
+                                    <a href="" class="text-decoration-none text-dark"></a>
+                                    <div class="row">
+                                        <div class="col-md-5" routerLink="/singlePage/data.PropertyID" (click)="mouseenterpropid(data.PropertyID)">
+                                            <div class="hf-img-wrapper hf-img-box" routerLink="">
+                                                <img src='assets/img/{{data.FeaturedImage}}' class="hf-">
+                                                <div class="hf-contrutype">{{data.name}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 col-md-7">
+                                            <div class="row" routerLink="/singlePage/{{data.PropertyID}}" (click)="mouseenterpropid(data.PropertyID)">
+                                                <div class="col-md-12">
+                                                    <h4 class="card-title hf-cd-title hf-property-name">{{data.PropertyName}}</h4>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <h5 class="card-title hf-cd-sub-title hf-devloper-nm pt-2 pb-2">By {{data.Developer}}</h5>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="hf-pro-location pb-2" style="margin-right:30px"><i class="fa fa-map-marker"></i><span>{{data.Location}}</span></div>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <div><i class="far fa-building" style="margin-right:10px"></i>{{data.te7}}</div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="hf-pro-location" style="margin-right:20px"><i class="fa fa-rupee"></i>{{data.Price}}</div>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <div class="pb-2"><b style="margin-right:10px">Built-up Area:</b> {{data.t1}}</div>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="pb-2"><b style="margin-right:10px;margin-bottom:10px">Rera Number:<br></b> {{data.Rera}}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <!-- <ul>
+                                                        <li *ngFor="let x of conobj_true">{{x}}</li>
+                                                    </ul> -->
+
+                                                    <div class="pb-2"><b style="margin-right:10px;margin-bottom:20px">Possession Status:<br></b>
+                                                        <div *ngFor="let status of data.ConStatus|convertdataob">
+                                                            <span *ngIf="(status.checked == true)"> <span class="fa fa-arrow-right mr-2">&nbsp;</span>{{status.name}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6"></div>
+                                            </div>
+
+
+                                            <!-- <p [ngClass]="{'limitTextHeight': isReadMore}" [innerHTML]="data.d1"></p>
+                                            <button type="button" (click)="isReadMore=!isReadMore">
+                                                                        {{ isReadMore ? 'Read More': 'Read Less' }}
+                                            </button> -->
+                                            <div class="hf-bdg-txt ">
+                                                <!-- <span class="badge bg-secondary ">PRIME LOCATION</span>
+                                                <span class="badge bg-secondary">WIDE ROAD</span>
+                                                <span class="badge bg-secondary">WELL VENTILATED</span> -->
+                                                <div class="pb-2"><b style="margin-right:10px;margin-bottom:10px">Property type:<br></b> {{data.PropertyType}}
+                                                </div>
+
+                                                <button type="button" class="rounded hf-bg-blue text-right text-white btn btn-light hf-btn-contact" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                    Contact Adviser
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- <div class="accordion accordion-flush border-top" id="accordionFlushExample{{data.ID}}">
+                                        <div class="accordion-item">
+                                            <h3 class="accordion-header" id="flush-headingOne{{data.ID}}">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                                            1 Similar listing by Prashant Kashinath Machhi in this area
+                                                                            </button>
+                                            </h3>
+                                            <div id="flush-collapseOne{{data.ID}}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <div class="d-flex">
+                                                                <img src="assets/img/agent-1.webp" class="">
+                                                                <div class="">
+                                                                    <div class="">1 BHK Builder Floor</div>
+                                                                    <div class="">Dhakoli</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3"></div>
+                                                        <div class="col-md-3"></div>
+                                                        <div class="col-md-3"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div> -->
+                                    <!-- <div class="p-3 border-top text-end"> -->
+                                    <!-- <button type="button" class="btn btn-outline-secondary" style="margin-right:1rem ;">Details</button> -->
+
+
+
+                                    <!-- </div> -->
+
+                                </div>
+                            </div>
+
+                            <div *ngIf="result.length === 0" class="alert alert-primary" role="alert">
+                                <h4>No Match Found</h4>
+
+                            </div>
+
+                        </ng-container>
+                    </div>
+                </div>
+                <!-- sidebar start -->
+                <div class="col-md-5">
+                    <div class="hf-pad-50"></div>
+                    <section class="position-relative hf-search-content p-3">
+                        <owl-carousel-o [options]=" customOptions1 ">
+                            <ng-template carouselSlide>
+                                <img src="assets/img/hf-know-3.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <img src="assets/img/hf-know-2.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                            </ng-template>
+                        </owl-carousel-o>
+                        <div class="hf-deal-of-week-container ">
+                            <div class="d-flex flex-row hf-deal-of-week-wrapper rounded">
+                                <div class="col-3 hf-deal-text-1 text-uppercase hf-blue text-white p-2 "> deal of the week</div>
+                                <div class="col-9 hf-deal-text-2 bg-white p-2 ">Avail 25:27 Developer Subvention* | Zero Stamp Duty*</div>
+                            </div>
+                        </div>
+                        <div class="position-absolute hf-blue text-white d-block p-2 hf-deal-top rounded opacity-50 " style="z-index: 1; "><span>2,3,4 BHK Starting 6.49 Cr</span></div>
+                    </section>
+                    <div class="d-flex flex-row pt-2">
+                        <h2>Discounted Deals</h2>
+                    </div>
+                    <div class="d-flex flex-row pt-4">
+                        <div class="col-6">
+                            <section class="position-relative p-1">
+                                <owl-carousel-o [options]="customOptions2 ">
+                                    <ng-template carouselSlide>
+                                        <img src="assets/img/hf-know-3.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                                    </ng-template>
+                                    <ng-template carouselSlide>
+                                        <img src="assets/img/hf-know-2.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                                    </ng-template>
+                                </owl-carousel-o>
+
+                                <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-top rounded opacity-50 " style="z-index: 1; "><span>Save 15 Lacs</span></div>
+                                <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-bottom rounded opacity-75" style="z-index: 1; ">
+                                    <span style="font-size: 15px;">Kalpataru Srishti</span><br>
+                                    <span style="font-size: 13px;">By Kalpataru Group</span><br>
+                                    <span style="font-size: 11px;">Starting 69 L</span>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-6">
+                            <section class="position-relative p-1">
+                                <owl-carousel-o [options]=" customOptions3 ">
+                                    <ng-template carouselSlide>
+                                        <img src="assets/img/hf-know-3.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                                    </ng-template>
+                                    <ng-template carouselSlide>
+                                        <img src="assets/img/hf-know-2.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                                    </ng-template>
+                                </owl-carousel-o>
+
+                                <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-top rounded opacity-50 " style="z-index: 1; "><span>Save 10 Lacs</span></div>
+                                <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-bottom rounded opacity-75" style="z-index: 1; ">
+                                    <span style="font-size: 15px;">4th Avenue Sunteck City</span><br>
+                                    <span style="font-size: 13px;">By Sunteck Realty</span><br>
+                                    <span style="font-size: 11px;">Starting 1.89 Cr</span>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar ends -->
+            </div>
+            <div id="pagination ">
+                <pagination-controls (pageChange)="p=$event "></pagination-controls>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+<!-- <app-footer></app-footer> -->
+<app-modal-c></app-modal-c>
+<!-- <router-outlet></router-outlet> -->

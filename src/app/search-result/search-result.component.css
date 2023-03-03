@@ -1,0 +1,298 @@
+#propid {
+    display: none;
+}
+
+.hf-btn-contact {
+    display: block;
+    float: right;
+    margin-right: 2px;
+}
+
+
+/* slider css */
+
+.price-input {
+    display: flex;
+    margin: 30px 0 35px;
+    width: 100%;
+}
+
+.price-input .field {
+    height: 45px;
+    display: flex;
+    /* background-color: #b7c7de; */
+    width: 100%;
+    align-items: center;
+}
+
+.field input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    outline: none!important;
+    border-radius: 5px!important;
+    margin-left: 12px;
+}
+
+.price-input .separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+}
+
+.slider {
+    height: 2px;
+    background: #b7c7de;
+    border-radius: 5px;
+}
+
+.slider .progress {
+    height: 5px;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #b7c7de;
+}
+
+.range-input {
+    position: relative;
+}
+
+.range-inpute input {
+    position: absolute;
+    top: 123px!important;
+    height: 2px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    background: #b7c7de;
+}
+
+input[type="range"]::-moz-slider-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    background: #b7c7de;
+}
+
+.form-check-input {
+    border: 1px solid rgba(0, 0, 0, .25)!important;
+    border-radius: 50%!important;
+}
+
+.srheaderresult {
+    height: 40px;
+}
+
+.srcard {
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    border: none;
+}
+
+.srcardimg {
+    height: 300px;
+}
+
+.srcardimgtag {
+    width: 70%;
+    height: 90%;
+    border-radius: 15.5px;
+    object-fit: cover;
+    transition: all .3s ease;
+}
+
+.srcardimgtag:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+.srsubcard {
+    border: none;
+    margin-top: -4rem;
+}
+
+.srcardsubinfo {
+    margin: 8px 0px;
+}
+
+.srplf {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.orangebgc {
+    color: #f4511e;
+}
+
+.srca {
+    background: #f4511e;
+    height: 30px;
+    width: 70%;
+    color: white;
+    font-weight: 500;
+}
+
+
+/* .srdotw{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+} */
+
+.srdotw {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    background-image: linear-gradient( -225deg, #231557 0%, #44107a 29%, #ff1361 67%, #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    /* display: inline-block; */
+    font-size: 190px;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.srddtext {
+    background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    60% {
+        background-position: 600px;
+    }
+    100% {
+        background-position: 600px;
+    }
+}
+
+.srddimg {
+    /* width: 70%;
+    height: 90%; */
+    border-radius: 15.5px;
+    object-fit: cover;
+    transition: all .3s ease;
+}
+
+.srddimg:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+.srpannelbtn {
+    background: #d7d7d799;
+}
+
+.srcabtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* 14-02-2023 */
+
+.m2card {
+    margin-top: 2rem;
+    height: 100%;
+    background: ghostwhite !important;
+    display: -webkit-inline-box;
+    border-radius: 1rem !important;
+}
+
+.m2cardimg {
+    width: 100% !important;
+    height: 100% !important;
+    margin-left: -1rem;
+    border-radius: 1rem 0rem 0rem 1rem;
+}
+
+.m2cardinfo {}
+
+.cardrow {
+    height: 15rem;
+}
+
+.sppn {
+    font-size: medium;
+}
+
+.spd {
+    font-weight: 500;
+}
+
+.spl {
+    font-weight: lighter;
+}
+
+.spp {
+    font-weight: bolder;
+}
+
+.spfp {
+    font-weight: lighter;
+}
+
+.spa {
+    font-weight: lighter;
+}
+
+.sppdrow {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spbtns {
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rh {
+    height: 35px;
+}
+
+.spcardm {
+    margin-top: 5rem;
+}
+
+ul#drp {
+    width: 440px;
+}

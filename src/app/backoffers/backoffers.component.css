@@ -1,0 +1,73 @@
+
+
+.mdiv{
+    margin: 2rem 0rem;
+}
+
+.bankimg{
+    height: 60px;
+}
+
+.imgrate{
+    text-align: center;
+}
+
+.card{
+    border: none;
+}
+
+.textrowcard{
+    background: ghostwhite !important;
+    border: 1.1px solid #80808047;
+    border-radius: 0px 0px 10px 10px;
+    height: 160px;
+}
+
+
+
+.imgtextbtn{
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.onlytext{
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cnbtn{
+    background: #063476;
+    border-radius: 10px !important;
+}
+
+.soimg{
+    width: 40%;
+}
+
+.cahlo{
+    font-weight: 700;
+    /* font-size: large; */
+    /* height: 100%; */
+}
+
+.boslidesrow{
+    padding: 25px 0px 0px 0px;
+    border: 1.1px solid #80808047;
+    border-radius: 10px 10px 0px 0px;
+    background: white;
+}
+
+.boslidesrowheading{
+    height: 50px;
+    margin-left: 15px;
+}
+
+.mainrow{
+    margin: 0rem;
+}

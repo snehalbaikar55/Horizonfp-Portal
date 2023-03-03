@@ -1,0 +1,71 @@
+<!--https://www.npmjs.com/package/ngx-owl-carousel-o-->
+
+<div class="hf-sliderContainer">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+            <div class="hf-banner-dt">
+
+                <h1 class="hf-banner-title text-center pt-4 pb-5"><span class="headingtext">Find Happyness</span> With Your Own Home</h1>
+                <div class="hf-nav-tab-container  hf-bg-blk-light text-light">
+                    <ul class="nav">
+                        <li class="nav-item hf-nav-item">
+                            <a class="nav-link text-light active" aria-current="page" href="#">Buy</a>
+                        </li>
+                        <li class="nav-item hf-nav-item">
+                            <a class="nav-link text-light">Rent</a>
+                        </li>
+                        <li class="nav-item hf-nav-item">
+                            <a class="nav-link text-light">Sell</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div id="home" class="container active">
+                            <br>
+                            <form class="form-group">
+                                <div class="fp-drp-menu form-group">
+                                    <div class="input-group mb-3">
+                                        <div class="form-control form-width">
+                                            <select class="form-select border-0 bg-white text-dark choosecity" (change)="onChange($event)">
+                                                <!-- <option  class="form-control" selected>{{selectedLocation}}</option> -->
+                                                <option class="form-control"   *ngFor="let loc of locationData" [ngValue]="loc.Location">{{loc.Location}}</option>
+                                
+                                            </select>
+                                        </div>
+                                        <div class="ng-autocomplete form-control hf-frontsearch ">
+                                            <ng-autocomplete [data]="Projectname" [searchKeyword]="keyword" (selected)='selectEvent($event)' (inputFocused)='onFocused($event)' (inputChanged)='onChangeSearch($event)' placeholder="Select Project Or Property Name" [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"
+                                                #auto>
+                                            </ng-autocomplete>
+
+                                            <ng-template #itemTemplate let-item2>
+                                                <a [innerHTML]="item2.PropertyName" name="localities"></a>
+                                            </ng-template>
+
+                                            <ng-template #notFoundTemplate let-notFound>
+                                                <div [innerHTML]="notFound"></div>
+                                            </ng-template>
+                                        </div>
+
+                                        <button type="button" class="btn btn-outline serachbtnimg" (click)="onClick()">
+        
+                                            Search  
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </ng-template>
+    </owl-carousel-o>
+</div>
+
+<router-outlet></router-outlet>

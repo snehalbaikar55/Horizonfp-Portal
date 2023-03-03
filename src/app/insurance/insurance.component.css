@@ -1,0 +1,24 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+.institle{
+    height: 2rem;
+}
+
+.insdescription{
+    height: 9rem;
+}
+
+.insabtn{
+    text-decoration: none;
+}
+
+.toiimg{
+    width: 200px;
+    text-align: center;
+}
+
+.cardposition{
+    margin-left: -15px;
+}

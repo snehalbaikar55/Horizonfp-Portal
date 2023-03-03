@@ -1,0 +1,29 @@
+.autocomplete {
+    bottom: 41px!important;
+}
+
+.form-width {
+    width: 100px;
+}
+
+.headingtext{
+    font-size: inherit;
+    color: #adf1ff;
+    /* color: #063476; */
+    /* color: #f4511e; */
+}
+
+.serachbtnimg{
+    background-color: #adf1ff;
+}
+
+.serachbtnimg:hover{
+    border: 1px solid whitesmoke;
+}
+
+
+.choosecity{
+    box-shadow: 0px 0px #ccc;
+}
+
+

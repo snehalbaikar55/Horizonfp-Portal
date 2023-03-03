@@ -1,0 +1,150 @@
+<div class="flex-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="hf-developernm">{{developername}}</h1>
+                <div class="hf-developr-des mb-4">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                </div>
+
+                <!-- <div class="row"> -->
+
+
+                <div class="row">
+                    <!-- <div class="hf-no-data" [innerHTML]="dynamicData"></div> -->
+                    <ng-container>
+                        <div class="col-md-12 mb-5" *ngFor="let data of propertyData|paginate:{itemsPerPage: 3, currentPage:p}">
+                            <div class="hf-search-content">
+
+                                <a href="" class="text-decoration-none text-dark"></a>
+                                <div class="row">
+                                    <div class="col-md-5" routerLink="/singlePage/data.PropertyID" (click)="mouseenterpropid(data.PropertyID)">
+                                        <div class="hf-img-wrapper" routerLink="">
+                                            <img src='assets/img/{{data.FeaturedImage}}' class="hf-">
+                                        </div>
+                                    </div>
+                                    <div class="p-3 col-md-7">
+                                        <div class="row" routerLink="/singlePage/{{data.PropertyID}}" (click)="mouseenterpropid(data.PropertyID)">
+                                            <div class="col-md-12">
+                                                <h4 class="card-title hf-cd-title hf-property-name">{{data.PropertyName}}</h4>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <h5 class="card-title hf-cd-sub-title hf-devloper-nm pt-2 pb-2">By {{data.Developer}}</h5>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="hf-pro-location pb-2" style="margin-right:30px"><i class="fa fa-map-marker"></i><span>{{data.Location}}</span></div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div><i class="far fa-building" style="margin-right:10px"></i>{{data.te7}}</div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="hf-pro-location" style="margin-right:20px"><i class="fa fa-rupee"></i>{{data.Price}}</div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="pb-2"><b style="margin-right:10px">Built-up Area:</b> {{data.t1}}</div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="pb-2"><b style="margin-right:10px;margin-bottom:10px">Rera Number:<br></b> {{data.Rera}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <!-- <ul>
+                                                    <li *ngFor="let x of conobj_true">{{x}}</li>
+                                                </ul> -->
+                                                <div class="pb-2"><b style="margin-right:10px;margin-bottom:10px">Possession Status:<br></b>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6"></div>
+                                        </div>
+
+
+                                        <div class="hf-bdg-txt "><span class="badge bg-secondary ">PRIME LOCATION</span><span class="badge bg-secondary">WIDE ROAD</span><span class="badge bg-secondary">WELL VENTILATED</span><button type="button" class="rounded hf-bg-blue text-right text-white btn btn-light hf-btn-contact"
+                                                data-bs-toggle="modal" data-bs-target="#myModal">
+                                            Contact Adviser
+                                        </button></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </ng-container>
+                </div>
+            </div>
+            <!-- sidebar start -->
+            <div class="col-md-5">
+                <div class="hf-pad-50"></div>
+                <section class="position-relative hf-search-content p-3" style="margin-top: 45px; margin-bottom: 20px;">
+                    <owl-carousel-o [options]=" customOptions1 ">
+                        <ng-template carouselSlide>
+                            <img src="assets/img/hf-know-3.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <img src="assets/img/hf-know-2.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                        </ng-template>
+                    </owl-carousel-o>
+                    <div class="hf-deal-of-week-container ">
+                        <div class="d-flex flex-row hf-deal-of-week-wrapper rounded">
+                            <div class="col-3 hf-deal-text-1 text-uppercase hf-blue text-white p-2 "> deal of the week</div>
+                            <div class="col-9 hf-deal-text-2 bg-white p-2 ">Avail 25:27 Developer Subvention* | Zero Stamp Duty*</div>
+                        </div>
+                    </div>
+                    <div class="position-absolute hf-blue text-white d-block p-2 hf-deal-top rounded opacity-50 " style="z-index: 1; "><span>2,3,4 BHK Starting 6.49 Cr</span></div>
+                </section>
+                <div class="d-flex flex-row pt-2">
+                    <h2>Discounted Deals</h2>
+                </div>
+                <div class="d-flex flex-row pt-4">
+                    <div class="col-6">
+                        <section class="position-relative p-1">
+                            <owl-carousel-o [options]="customOptions2 ">
+                                <ng-template carouselSlide>
+                                    <img src="assets/img/hf-know-3.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                                </ng-template>
+                                <ng-template carouselSlide>
+                                    <img src="assets/img/hf-know-2.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                                </ng-template>
+                            </owl-carousel-o>
+
+                            <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-top rounded opacity-50 " style="z-index: 1; "><span>Save 15 Lacs</span></div>
+                            <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-bottom rounded opacity-75" style="z-index: 1; ">
+                                <span style="font-size: 15px;">Kalpataru Srishti</span><br>
+                                <span style="font-size: 13px;">By Kalpataru Group</span><br>
+                                <span style="font-size: 11px;">Starting 69 L</span>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-6">
+                        <section class="position-relative p-1">
+                            <owl-carousel-o [options]=" customOptions3 ">
+                                <ng-template carouselSlide>
+                                    <img src="assets/img/hf-know-3.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                                </ng-template>
+                                <ng-template carouselSlide>
+                                    <img src="assets/img/hf-know-2.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded ">
+                                </ng-template>
+                            </owl-carousel-o>
+
+                            <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-top rounded opacity-50 " style="z-index: 1; "><span>Save 10 Lacs</span></div>
+                            <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-bottom rounded opacity-75" style="z-index: 1; ">
+                                <span style="font-size: 15px;">4th Avenue Sunteck City</span><br>
+                                <span style="font-size: 13px;">By Sunteck Realty</span><br>
+                                <span style="font-size: 11px;">Starting 1.89 Cr</span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!-- sidebar ends -->
+        </div>
+        <div id="pagination ">
+            <pagination-controls (pageChange)="p=$event "></pagination-controls>
+        </div>
+    </div>
+</div>
+<!-- <app-footer></app-footer> -->
+<app-modal-c></app-modal-c>
+<!-- <router-outlet></router-outlet> -->

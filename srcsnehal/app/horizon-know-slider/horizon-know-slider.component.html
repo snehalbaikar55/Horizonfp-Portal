@@ -1,0 +1,174 @@
+<section class="hf-know-base-Container">
+    <div class="container">
+        <div class="hf-top-p-coll-txt pb-3">
+            <h1><span class="hf-textblue">Horizon </span>Knowledge Base </h1>
+
+        </div>
+        <div class="">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let data of horizonbasedata">
+                    <div routerLink="" class="hf-card-blk " (click)="onclickPropall(data.PropertyID)">
+                        <div class="card hf-hor-slide">
+                            <div class="overflow-hidden">
+                                <img src="assets/img/{{data.FeaturedImage}}" class="card-img-top hf-padd" alt="...">
+                            </div>
+                            <div class="card-body hf-padd">
+                                <h4 class="card-title hf-cd-title hf-property-name">{{data.PropertyName| reducelength:[18]}}</h4>
+                                <h6 class="card-title hf-cd-sub-title hf-devloper-nm">{{data.Developer}}</h6>
+                                <div class="hf-pro-price"><i class="hf-rupee-symbol">&#8377; </i><span>{{data.Price}}</span></div>
+                                <div class="hf-pro-area"><i class="fa fa-area-chart"></i><span>{{data.t1}}</span></div>
+                                <div class="hf-pro-bhk"><i class="far fa-building"></i><span>{{data.te7}}</span></div>
+                                <div class="hf-pro-location"><i class="fa fa-map-marker"></i><span>{{data.Location}}</span></div>
+                                <p class="hf-text-sm"> </p>
+                                <div class="hf-btn-group d-flex">
+                                    <button type="button" class="btn  btn-outline-secondary rounded">View More</button>
+                                    <button type="button" class="btn  hf-bg-blue text-white rounded" data-bs-toggle="modal" data-bs-target="#myModal">Enquiry Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+
+            </owl-carousel-o>
+
+
+            <!-- <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide>
+                    <div routerLink="" class="hf-card-blk ">
+                        <div class="card hf-hor-slide">
+                            <div class="overflow-hidden">
+                                <img src="assets/img/hfTpColl1.jpg" class="card-img-top hf-padd" alt="...">
+                            </div>
+                            <div class="card-body hf-padd">
+                                <h4 class="card-title hf-cd-title hf-property-name">Safal Sainath</h4>
+                                <h6 class="card-title hf-cd-sub-title hf-devloper-nm">By Safal Group</h6>
+                                <div class="hf-pro-price"><i class="hf-rupee-symbol">&#8377; </i><span>2.45 Cr - 3.45 Cr</span></div>
+                                <div class="hf-pro-area"><i class="fa fa-area-chart"></i><span>750 to 985 SqFt</span></div>
+                                <div class="hf-pro-bhk"><i class="far fa-building"></i><span>2, 3, BHK</span></div>
+                                <div class="hf-pro-location"><i class="fa fa-map-marker"></i><span>Chembur</span></div>
+                                <p class="hf-text-sm"> </p>
+                                <div class="hf-btn-group d-flex">
+                                    <button type="button" class="btn  btn-outline-secondary rounded">View More</button>
+                                    <button type="button" class="btn  hf-bg-blue text-white rounded" data-bs-toggle="modal" data-bs-target="#myModal">Enquiry Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div routerLink="" class="hf-card-blk ">
+                        <div class="card hf-hor-slide">
+                            <div class="overflow-hidden">
+                                <img src="assets/img/hfTpColl1.jpg" class="card-img-top hf-padd" alt="...">
+                            </div>
+                            <div class="card-body hf-padd">
+                                <h4 class="card-title hf-cd-title hf-property-name">Safal Sainath</h4>
+                                <h6 class="card-title hf-cd-sub-title hf-devloper-nm">By Safal Group</h6>
+                                <div class="hf-pro-price"><i class="hf-rupee-symbol">&#8377; </i><span>2.45 Cr - 3.45 Cr</span></div>
+                                <div class="hf-pro-area"><i class="fa fa-area-chart"></i><span>750 to 985 SqFt</span></div>
+                                <div class="hf-pro-bhk"><i class="far fa-building"></i><span>2, 3, BHK</span></div>
+                                <div class="hf-pro-location"><i class="fa fa-map-marker"></i><span>Chembur</span></div>
+                                <p class="hf-text-sm"> </p>
+                                <div class="hf-btn-group ">
+                                    <button type="button" class="btn  btn-outline-secondary rounded">View More</button>
+                                    <button type="button" class="btn  hf-bg-blue text-white rounded" data-bs-toggle="modal" data-bs-target="#myModal">Enquiry Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div routerLink="" class="hf-card-blk ">
+                        <div class="card hf-hor-slide">
+                            <div class="overflow-hidden">
+                                <img src="assets/img/hfTpColl1.jpg" class="card-img-top hf-padd" alt="...">
+                            </div>
+                            <div class="card-body hf-padd">
+                                <h4 class="card-title hf-cd-title hf-property-name">Safal Sainath</h4>
+                                <h6 class="card-title hf-cd-sub-title hf-devloper-nm">By Safal Group</h6>
+                                <div class="hf-pro-price"><i class="hf-rupee-symbol">&#8377; </i><span>2.45 Cr - 3.45 Cr</span></div>
+                                <div class="hf-pro-area"><i class="fa fa-area-chart"></i><span>750 to 985 SqFt</span></div>
+                                <div class="hf-pro-bhk"><i class="far fa-building"></i><span>2, 3, BHK</span></div>
+                                <div class="hf-pro-location"><i class="fa fa-map-marker"></i><span>Chembur</span></div>
+                                <p class="hf-text-sm"> </p>
+                                <div class="hf-btn-group ">
+                                    <button type="button" class="btn  btn-outline-secondary rounded">View More</button>
+                                    <button type="button" class="btn  hf-bg-blue text-white rounded" data-bs-toggle="modal" data-bs-target="#myModal">Enquiry Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div routerLink="" class="hf-card-blk ">
+                        <div class="card hf-hor-slide">
+                            <div class="overflow-hidden">
+                                <img src="assets/img/hfTpColl1.jpg" class="card-img-top hf-padd" alt="...">
+                            </div>
+                            <div class="card-body hf-padd">
+                                <h4 class="card-title hf-cd-title hf-property-name">Safal Sainath</h4>
+                                <h6 class="card-title hf-cd-sub-title hf-devloper-nm">By Safal Group</h6>
+                                <div class="hf-pro-price"><i class="hf-rupee-symbol">&#8377; </i><span>2.45 Cr - 3.45 Cr</span></div>
+                                <div class="hf-pro-area"><i class="fa fa-area-chart"></i><span>750 to 985 SqFt</span></div>
+                                <div class="hf-pro-bhk"><i class="far fa-building"></i><span>2, 3, BHK</span></div>
+                                <div class="hf-pro-location"><i class="fa fa-map-marker"></i><span>Chembur</span></div>
+                                <p class="hf-text-sm"> </p>
+                                <div class="hf-btn-group ">
+                                    <button type="button" class="btn  btn-outline-secondary rounded">View More</button>
+                                    <button type="button" class="btn  hf-bg-blue text-white rounded" data-bs-toggle="modal" data-bs-target="#myModal">Enquiry Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div routerLink="" class="hf-card-blk ">
+                        <div class="card hf-hor-slide">
+                            <div class="overflow-hidden">
+                                <img src="assets/img/hfTpColl1.jpg" class="card-img-top hf-padd" alt="...">
+                            </div>
+                            <div class="card-body hf-padd">
+                                <h4 class="card-title hf-cd-title hf-property-name">Safal Sainath</h4>
+                                <h6 class="card-title hf-cd-sub-title hf-devloper-nm">By Safal Group</h6>
+                                <div class="hf-pro-price"><i class="hf-rupee-symbol">&#8377; </i><span>2.45 Cr - 3.45 Cr</span></div>
+                                <div class="hf-pro-area"><i class="fa fa-area-chart"></i><span>750 to 985 SqFt</span></div>
+                                <div class="hf-pro-bhk"><i class="far fa-building"></i><span>2, 3, BHK</span></div>
+                                <div class="hf-pro-location"><i class="fa fa-map-marker"></i><span>Chembur</span></div>
+                                <p class="hf-text-sm"> </p>
+                                <div class="hf-btn-group ">
+                                    <button type="button" class="btn  btn-outline-secondary rounded">View More</button>
+                                    <button type="button" class="btn  hf-bg-blue text-white rounded" data-bs-toggle="modal" data-bs-target="#myModal">Enquiry Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div routerLink="" class="hf-card-blk ">
+                        <div class="card hf-hor-slide">
+                            <div class="overflow-hidden">
+                                <img src="assets/img/hfTpColl1.jpg" class="card-img-top hf-padd" alt="...">
+                            </div>
+                            <div class="card-body hf-padd">
+                                <h4 class="card-title hf-cd-title hf-property-name">Safal Sainath</h4>
+                                <h6 class="card-title hf-cd-sub-title hf-devloper-nm">By Safal Group</h6>
+                                <div class="hf-pro-price"><i class="hf-rupee-symbol">&#8377; </i><span>2.45 Cr - 3.45 Cr</span></div>
+                                <div class="hf-pro-area"><i class="fa fa-area-chart"></i><span>750 to 985 SqFt</span></div>
+                                <div class="hf-pro-bhk"><i class="far fa-building"></i><span>2, 3, BHK</span></div>
+                                <div class="hf-pro-location"><i class="fa fa-map-marker"></i><span>Chembur</span></div>
+                                <p class="hf-text-sm"> </p>
+                                <div class="hf-btn-group ">
+                                    <button type="button" class="btn  btn-outline-secondary rounded">View More</button>
+                                    <button type="button" class="btn  hf-bg-blue text-white rounded" data-bs-toggle="modal" data-bs-target="#myModal">Enquiry Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+
+            </owl-carousel-o> -->
+        </div>
+    </div>
+</section>

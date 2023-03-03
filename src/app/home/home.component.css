@@ -1,0 +1,59 @@
+#card-img-topid{
+    width: 100%;
+    height: 180px;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.plcardflatloc{
+    width: 50%;
+}
+
+
+.plcardpricearea{
+    width: 50%;
+}
+
+
+.plcard{
+    display: flex;
+    text-align: center;
+    margin: 5px 0px;
+}
+
+.viewmore{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.btn-55{
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(90deg, #f4511e, rgb(0, 86, 178));
+    color: white;
+    font-weight: 500;
+    border: none;
+}
+
+.tpcforyou{
+    text-align: center;
+}
+
+.p-2{
+    border: none;
+}
+
+.rmhover:hover{
+    color: #f4511e;
+}
+
+.oscard{
+    border: 1px solid #026b96;
+    border-radius: 10px;
+}
+
+.aftext{
+    margin-left: 1rem;
+    font-size: larger;
+}

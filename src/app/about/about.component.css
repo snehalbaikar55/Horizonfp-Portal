@@ -1,0 +1,125 @@
+/* .aopheading{
+    text-align: center;
+}
+
+.aenbtn{
+    display: flex;
+    justify-content: center;
+}
+
+.aopcard{
+    margin-top: 20rem;
+}
+
+.aimgtwo{
+    margin-top: -10rem;
+    width: 100%;
+}
+
+.acardtwo{
+    margin-top: 10rem;
+    width: 101.5%;
+}
+
+.aimgone{
+    margin-top: 1rem;
+}
+
+
+.afrow{
+    margin-top: 25px;
+}
+
+.imgones{
+    width: 100%;
+    height: 415px;
+}
+
+#cardones{
+    bottom: 15%;
+    position: absolute;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 5s;
+}
+
+@-webkit-keyframes run {
+    0% {
+      left: 0;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 0;    
+    }
+  } */
+
+
+
+  /* .flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: #d4d7da;
+    color: white;
+    transform: rotateY(180deg);
+  } */
+
+
+  #imgone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #accompany{
+    color: gray;
+  }
+
+  .acaboutus{
+    font-weight: 800;
+    font-size: 5rem;
+  }
+
+  .aenbtn{
+    width: 150px;
+  }
+
+  .plancolor{
+    width: 300px;
+    height: 400px;
+    background: #d3d2d26e;
+    margin-left: -8rem;
+  }

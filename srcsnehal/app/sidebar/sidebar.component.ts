@@ -1,0 +1,46 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder,FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../services/data.service';
+
+@Component({
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
+})
+export class SidebarComponent implements OnInit {
+  Contactform!: FormGroup;
+  isSubmitted!: boolean;
+  name: any;
+  email: any;
+  mobile: any;
+  emaildata: any;
+  constructor( private fb: FormBuilder,private dataservice:DataService) { }
+
+  ngOnInit(): void {
+    this.Contactform= this.fb.group({  
+      name: ['',[Validators.required]],  
+      email: ['',[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],  
+      mobile: ['',[Validators.required, Validators.maxLength(10)]],  
+      
+    });  
+    
+  }
+  submitForm(){
+    this.isSubmitted = true;  
+    if (this.Contactform.invalid) {  
+      return  
+    }  
+    console.log("Name :- "+this.form['name'].value)  
+    console.log("Email :- "+this.form['email'].value)  
+    console.log("Mobile :- "+this.form['mobile'].value)  
+    this.dataservice.emaildataSer(this.Contactform.getRawValue()).subscribe(res=>{
+      this.emaildata = res;
+    
+    })
+    //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.Contactform.getRawValue()));
+  }
+  get form() {  
+    return this.Contactform.controls;  
+  }  
+
+}

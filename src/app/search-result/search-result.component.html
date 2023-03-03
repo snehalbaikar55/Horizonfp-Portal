@@ -1,0 +1,328 @@
+<div class="">
+    <div class="mt-5"> </div>
+    <div class="p-1 hf-bg-blue position-fixed w-100 hf-fix-search-bar">
+        <div class="hf-search-bar p-3">
+
+            <div class="container">
+                <div class="btn-group mt-3 mb-3 w-50 srheaderresult">
+                    <button type="button" class="btn btn-secondary btn-md dropdown-toggle srpannelbtn" data-bs-toggle="dropdown" disabled>
+                                  Buy
+                                </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Rent</a></li>
+                        <li><a class="dropdown-item" href="#">Agent</a></li>
+                        <li><a class="dropdown-item" href="#">Project</a></li>
+                    </ul>
+                    <input type="text" class="form-control w-100" name="searchbyloc" placeholder="  Search by location or Property Name">
+                </div>
+
+
+                <div class="btn-group srheaderresult">
+                    <button class="btn btn-secondary btn-md dropdown-toggle srpannelbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      BHK
+                                    </button>
+                    <ul class="dropdown-menu p-3">
+                        <div class="form-check" *ngFor="let bk of bhkvalue">
+                            <input class="form-check-input" name="bhk_search" type="checkbox" value="{{bk}}" (change)="onCheckboxChange($event)">{{bk}} &nbsp; BHK
+
+                        </div>
+
+                    </ul>
+                </div>
+
+
+
+                <div class="btn-group srheaderresult">
+                    <button class="btn btn-secondary btn-md dropdown-toggle srpannelbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Budget
+                    </button>
+                    <ul class="dropdown-menu p-3" id="drp" [ngClass]="status ? 'showdrp' : 'hidedrp'">
+                        <div class="custom-slider">
+                            <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (valueChange)="onpricefilter($event);"></ngx-slider>
+                        </div>
+                        <div class="d-flex">
+                            <select class="form-select mt-3" aria-label="Default select example" [ngModel]="minValue" (change)="onchangeminprice($event)" style="margin-right: 20px;">
+                                <!-- <option selected>{{minValue}}</option> -->
+                                <option value="{{p.price_converted/100000}}" *ngFor="let p of price ;let i = index">{{p.price}}</option>
+                            </select>
+                            <select class="form-select mt-3" aria-label="Default select example" [ngModel]="maxValue" (change)="onchangemaxprice($event)">
+                                <!-- <option selected>{{maxValue}}</option> -->
+                                <option value="{{m.price_converted/100000}}" *ngFor="let m of price ;let j = index">{{m.price}}</option>
+                            </select>
+                        </div>
+                    </ul>
+                </div>
+                <div class="btn-group srheaderresult">
+                    <button class="btn btn-secondary btn-md dropdown-toggle srpannelbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Property Type
+                    </button>
+                    <ul class="dropdown-menu p-3">
+                        <div class="form-check" *ngFor="let ptype of protype">
+                            <input type="checkbox" class="form-check-input" name="protypesearch" value="{{ptype}}" (click)="onCheckboxChangeProp($event)">{{ptype}}
+
+                        </div>
+                    </ul>
+                </div>
+                <div class="btn-group srheaderresult">
+                    <button class="btn btn-secondary btn-md dropdown-toggle srpannelbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Construction Status
+                    </button>
+                    <ul class="dropdown-menu p-3">
+                        <div class="form-check" *ngFor="let ctype of conType">
+                            <input type="checkbox" class="form-check-input" value="{{ctype}}" name="conTypesearch" [ngModel]="selectedIndex === i" (change)="onCheckboxChangeconstruction($event);">{{ctype}}
+
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="btn-group srheaderresult">
+                    <button class="btn btn-secondary btn-md srpannelbtn" type="button" (click)="onclickclearfilter()">
+                        Clear Filter
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <section class="hf-abt-profile-sec pb-5">
+        <div class="container">
+            <div class="hf-breadcrumb p-3">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Property for Sale in Mumbai</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- <div class="col-md-7">
+                    <div class="row">
+                        <div class="hf-no-data" [innerHTML]="dynamicData"></div>
+                        <ng-container *ngIf="(propertyData| searchresult:bhk_search:conTypesearch:protypesearch:searchbyloc) as result">
+                            <div class="col-md-12 mb-5" *ngFor="let data of propertyData| searchresult:bhk_search:conTypesearch:protypesearch:searchbyloc|paginate:{itemsPerPage: 5, currentPage:p}">
+                                <div class="">
+
+                                    <a href="" class="text-decoration-none text-dark"></a>
+
+                                    <div class="row">
+                                        <div class="card srcard">
+                                            <div class="srcardimg">
+                                                <img src='assets/img/{{data.FeaturedImage}}' onerror="this.src='assets/defaultimg/himg.PNG';" class="card-img-top srcardimgtag" alt="img not uploaded">
+                                            </div>
+                                            <div class="card srsubcard shadow p-3 mb-5 bg-white rounded">
+                                                <div class="card-body srcardinfo">
+                                                    <h5 class="card-title"><span class="orangebgc">{{data.Developer}} </span></h5>
+                                                    <h3>{{data.PropertyName}}</h3>
+                                                    <div class="row srcardsubinfo">
+                                                          <div class="col-sm srplf">
+                                                            <i class="fa fa-rupee" style="margin-right:5px;"></i> {{data.Price | reducelength:20}}
+                                                          </div>
+                                                          <div class="col-sm srplf">
+                                                            <i class="fa fa-map-marker" style="margin-right:5px"></i> {{data.Location | reducelength:15}}
+                                                          </div>
+                                                          <div class="col-sm srplf">
+                                                            <i class="far fa-building"  style="margin-right:5px"></i> {{data.te7 | reducelength:20}}
+                                                          </div>
+                                                    </div>
+                                                    <div class="row srcardsubinfo">
+                                                          <div class="col-sm">
+                                                            <b style="margin-right:10px;color: gray;">Built-up Area<br></b> {{data.t1 | reducelength:20}}
+                                                          </div>
+                                                          <div class="col-sm">
+                                                            <b style="margin-right:10px;margin-bottom:10px;color: gray;">Property type<br></b> {{data.PropertyType | reducelength:20}}
+                                                          </div>
+                                                          <div class="col-sm">
+                                                            <b style="margin-right:10px;margin-bottom:10px;color: gray;">Rera Number<br></b> {{data.Rera | reducelength:20}}
+                                                          </div>
+                                                    </div>
+                                                    <div class="row srcardsubinfo">
+                                                          <div class="col-sm">
+                                                            <b style="margin-right:10px;margin-bottom:10px;color: gray;">Possession Status<br></b>{{data.name}} {{conobj_true}}
+                                                          </div>
+                                                          <div class="col-sm">
+                                                            
+                                                          </div>
+                                                          <div class="col-sm srcabtn">                                                
+                                                            <button type="button" class="srca" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                                Contact Adviser
+                                                            </button>
+                                                          </div>
+                                                    </div>
+                                                    
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <hr>
+                            </div>
+
+                            <div *ngIf="result.length === 0" class="alert alert-primary" role="alert">
+                                <h4>No Match Found</h4>
+
+                            </div>
+
+                        </ng-container>
+                    </div>
+                </div> -->
+
+                <div class="col-md-7">
+
+                    <div class="row spcardm">
+                        <!-- <div class="hf-no-data" [innerHTML]="dynamicData"></div> -->
+                        <ng-container *ngIf="(propertyData| searchresult:bhk_search:conTypesearch:protypesearch:searchbyloc) as result">
+                            <div class="card m2card shadow bg-body rounded" *ngFor="let data of propertyData| searchresult:bhk_search:conTypesearch:protypesearch:searchbyloc|paginate:{itemsPerPage: 4, currentPage:p}" appBorderhighlight>
+
+                                <div class="col-4">
+                                    <img src='Admin_angular/assets/img/featuredimg_admin/{{data.PropertyID}}/{{data.FeaturedImage}}' onerror="this.src='assets/defaultimg/himg.PNG';" class="card-img-top m2cardimg" alt="img not uploaded">
+                                </div>
+                                <div class="col-8 m2cardinfo">
+                                    <div class="row sppdrow">
+                                        <div class="col-6 sppn">{{data.PropertyName | reducelength:15}}</div>
+                                        <div class="col-6 spd">By {{data.Developer | reducelength:15}}</div>
+                                    </div>
+                                    <div class="row rh">
+                                        <div class="col-6">
+                                            <div class="col-6 spl"><i class="fa fa-map-marker"></i> {{data.Location | reducelength:10}}</div>
+                                            <!-- <div class="col-6">Mumbai</div> -->
+                                        </div>
+                                        <div class="col-6"></div>
+                                    </div>
+                                    <div class="row rh">
+                                        <div class="col-6 spp"><i class="hf-rupee-symbol">&#8377;</i> {{data.Price | reducelength:20}}</div>
+                                        <div class="col-6">RTM*</div>
+                                    </div>
+                                    <div class="row rh">
+                                        <div class="col-6 spfp"><i class="far fa-building"></i> {{data.te7 | reducelength:20}}</div>
+                                        <div class="col-6">EMI*</div>
+                                    </div>
+                                    <div class="row rh">
+                                        <div class="col-6 spa"><i class="fa fa-area-chart"></i> {{data.t1 | reducelength:20}}</div>
+                                        <div class="col-6">Investment*</div>
+                                    </div>
+                                    <div class="row rh">
+
+                                        <div class="col-6 spa"><i class="fa fa-area-chart"></i> {{data.PropertyType | reducelength:20}}</div>
+
+                                    </div>
+                                    <div class="row rh">
+                                        <div class="col-6">Possession Status:
+                                        </div>
+                                        <div class="col-6">
+                                            <div *ngFor="let status of data.ConStatus|convertdataob">
+                                                <span *ngIf="(status.checked == true)"> <span class="fa fa-arrow-right mr-2">&nbsp;</span>{{status.name}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row spbtns">
+                                        <div class="col-6">
+                                            <button type="button" class="btn btn-outline-success" (click)="onClickproid(data.PropertyID)">VIEW DETAILS</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#myModal">INSTANT CALL</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </ng-container>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- sidebar start -->
+                <div class="col-md-5">
+
+                    <div class="hf-pad-50"></div>
+                    <section class="position-relative p-3">
+                        <owl-carousel-o [options]=" customOptions1 ">
+                            <ng-template carouselSlide>
+                                <img src="assets/img/hf-know-3.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded srddimg">
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <img src="assets/img/hf-know-2.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded srddimg">
+                            </ng-template>
+                        </owl-carousel-o>
+                        <div class="hf-deal-of-week-container ">
+                            <div>
+                                <div class="srdotw">
+                                    <h4>DEAL OF THE WEEK</h4>
+                                </div>
+                                <div class="srdotwd">
+                                    <h4>Avail 25:27 Developer Subvention* | Zero Stamp Duty*</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-absolute hf-blue text-white d-block p-2 hf-deal-top rounded opacity-50 " style="z-index: 1; "><span>2,3,4 BHK Starting 6.49 Cr</span></div>
+                    </section>
+                    <hr>
+
+
+                    <div class="d-flex flex-row pt-2">
+                        <h2 class="srddtext">Discounted Deals</h2>
+                    </div>
+                    <div class="d-flex flex-row pt-4">
+                        <div class="col-6">
+                            <section class="position-relative p-1">
+                                <owl-carousel-o [options]="customOptions2 ">
+                                    <ng-template carouselSlide>
+                                        <img src="assets/img/hf-know-3.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded srddimg">
+                                    </ng-template>
+                                    <ng-template carouselSlide>
+                                        <img src="assets/img/hf-know-2.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded srddimg">
+                                    </ng-template>
+                                </owl-carousel-o>
+
+                                <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-top rounded opacity-50 " style="z-index: 1; "><span>Save 15 Lacs</span></div>
+                                <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-bottom rounded opacity-75" style="z-index: 1; ">
+                                    <span style="font-size: 15px;">Kalpataru Srishti</span><br>
+                                    <span style="font-size: 13px;">By Kalpataru Group</span><br>
+                                    <span style="font-size: 11px;">Starting 69 L</span>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-6">
+                            <section class="position-relative p-1">
+                                <owl-carousel-o [options]=" customOptions3 ">
+                                    <ng-template carouselSlide>
+                                        <img src="assets/img/hf-know-3.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded srddimg">
+                                    </ng-template>
+                                    <ng-template carouselSlide>
+                                        <img src="assets/img/hf-know-2.jpg " alt=" " class="img-fluid hf-deal-slider-image rounded srddimg">
+                                    </ng-template>
+                                </owl-carousel-o>
+
+                                <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-top rounded opacity-50 " style="z-index: 1; "><span>Save 10 Lacs</span></div>
+                                <div class="position-absolute hf-blue text-white d-block p-2 hf-discount-bottom rounded opacity-75" style="z-index: 1; ">
+                                    <span style="font-size: 15px;">4th Avenue Sunteck City</span><br>
+                                    <span style="font-size: 13px;">By Sunteck Realty</span><br>
+                                    <span style="font-size: 11px;">Starting 1.89 Cr</span>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar ends -->
+            </div>
+            <div id="pagination ">
+                <pagination-controls (pageChange)="p=$event "></pagination-controls>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+<app-footer></app-footer>
+<app-modal-c></app-modal-c>
+<router-outlet></router-outlet>

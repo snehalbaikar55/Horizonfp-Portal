@@ -1,0 +1,10 @@
+.hf-btn{
+    color: #0347ac;
+    border-radius: 2px;
+    border: 1px solid #0347ac;
+    padding: 10px 24px;
+    width: fit-content;
+    margin: 16px auto 0px;
+    cursor: pointer;
+    font-weight: 500;
+}

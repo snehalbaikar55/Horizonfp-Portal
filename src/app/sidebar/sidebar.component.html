@@ -1,0 +1,46 @@
+<div class="card border-bottom-0 p-3 bg-white rounded">
+    <div class="card-header hf-bg-blue p-3 text-light sheading">
+        ENQUIRE
+    </div>
+    <div class="card-body">
+        <form [formGroup]="Contactform" method="post" class="contact-form" id="contact-form">
+
+
+            <div class="form-floating mb-3">
+                <input type="name" formControlName="name" class="form-control" id="floatingName" placeholder="name">
+                <label for="floatingName">Name</label>
+                <div *ngIf="Contactform.controls['name'].invalid && Contactform.controls['name'].touched" class="alert alert-danger">
+                    <div *ngIf="Contactform.controls['name'].errors?.['required']">
+                        Name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" formControlName="email" class="form-control" id="floatingEmail" placeholder="Email">
+                <label for="floatingEmail">Email address</label>
+                <div *ngIf="Contactform.controls['email'].invalid && Contactform.controls['email'].touched" class="alert alert-danger">
+                    <div *ngIf="Contactform.controls['email'].errors?.['required']">
+                        Email is required.
+                    </div>
+                    <p>Invalid format</p>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="mobile" formControlName="mobile" class="form-control" id="floatingMobile" placeholder="Mobile">
+                <label for="floatingInput">Mobile</label>
+                <div *ngIf="Contactform.controls['mobile'].invalid && Contactform.controls['mobile'].touched" class="alert alert-danger">
+                    <div *ngIf="Contactform.controls['mobile'].errors?.['required']">
+                        Mobile is required.
+                    </div>
+                    <div *ngIf="Contactform.controls['mobile'].errors?.['maxLength']">
+                        Mobile is maxLength 10 required.
+                    </div>
+                </div>
+
+            </div>
+            <div class="sbtn">
+                <button type="button" (click)="submitForm()" class="btn btn-primary hf-bg-blue ssbtn">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

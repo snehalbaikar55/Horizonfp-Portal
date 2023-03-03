@@ -1,0 +1,379 @@
+<app-bannerslider></app-bannerslider>
+
+<section class="hf-top-mum-prop">
+    <div class="container">
+        <div class="d-flex">
+            <h1 class="col-9 text-dark pb-5" data-aos="pulse" data-aos-duration="500"><span class="hf-textblue">Top Projects</span> in Mumbai</h1>
+            <div class="col-3 text-end text-white hf-view-link pb-5"><button class="btn btn-outline-secondary" (click)="onclickPropall(alldata)">View More</button></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 mb-3 hf-hover-zoom hf-curser" data-aos="" data-aos-duration="500" *ngFor="let pro of mumbaiprojectdata">
+                <div>
+                    <div class="card hf-box-shadow">
+                        <div class="overflow-hidden hf-img-box">
+                            <img src="assets/img/{{pro.FeaturedImage}}" class="card-img-top" alt="...">
+                            <div class="hf-contrutype">propname</div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title hf-cd-title hf-property-name">{{pro.PropertyName|reducelength:21}}</h4>
+                            <h6 class="card-title hf-cd-sub-title hf-devloper-nm">By {{pro.Developer}}</h6>
+                            <div class="hf-pro-price"><i class="hf-rupee-symbol">&#8377; </i><span>{{pro.Price}}</span></div>
+                            <div class="hf-pro-area"><i class="fa fa-area-chart"></i><span>{{pro.t1|reducelength:30}}</span></div>
+                            <div class="hf-pro-bhk"><i class="far fa-building"></i><span>{{pro.te7}}</span></div>
+                            <div class="hf-pro-location"><i class="fa fa-map-marker"></i><span>{{pro.Location|reducelength:27}}</span></div>
+                            <p class="hf-text-sm"> </p>
+                            <div class="hf-btn-group ">
+                                <button type="button" class="btn btn-outline-secondary rounded" routerLink="/singlePage/pid{{pro.PropertyID}}" class="hf-card-blk " (click)="onClickproid(pro.PropertyID)">View More</button>
+                                <button type="button" class="btn hf-bg-blue text-white rounded" data-bs-toggle="modal" data-bs-target="#myModal">Enquiry Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<section class="hf-top-p-coll">
+    <div class="container ">
+        <div class="hf-top-p-coll-txt pb-3">
+            <h1 data-aos="fade-up" data-aos-duration="1000" class="text-dark"><span class="hf-textblue">Top Property</span> Collections For You</h1>
+            <p>
+                The latest residential offerings from the best builders in Mumbai, handpicked by our team of experts just for you and backed by our widely acclaimed transaction and financial services.
+            </p>
+        </div>
+        <div class="hf-top-proj-coll">
+            <div class="row">
+                <div class="col-md-4 mb-3 hf-curser">
+                    <div class="hf-top-coll1 hf-top-coll shadow-sm rounded hf-overlay" (click)="onClicksearchByConsStatus(newproject)" data-aos="fade-right" data-aos-duration="800">
+                        <div routerLink="">
+                            <div class=" hf-col-frt-txt">
+                                <h3 class="text-white btn  btn-lg gradient-border">{{newproject}}</h3>
+                            </div>
+                            <div class="hf-col-overlay">
+                                Buy Newly Launched Residential Property Projects, Apartments/Flats for sale in Mumbai, Maharashtra online.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 hf-curser">
+                    <div class="hf-top-coll2 hf-top-coll shadow-sm rounded hf-overlay" (click)="onClicksearchByConsStatus(underConstruction)">
+                        <div routerLink="">
+                            <div class="hf-col-frt-txt">
+                                <h3 class="text-white btn  btn-lg gradient-border">{{underConstruction}}</h3>
+                            </div>
+                            <div class="hf-col-overlay">Looking to buy new Under Construction Projects for Sale in Mumbai, Maharashtra.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hf-curser">
+                    <div class="hf-top-coll3 hf-top-coll shadow-sm rounded hf-overlay" (click)="onClicksearchByConsStatus(readytomove)" data-aos="fade-left" data-aos-duration="800">
+                        <div routerLink="">
+                            <div class="hf-col-frt-txt">
+                                <h3 class="text-white btn  btn-lg gradient-border">{{readytomove}}</h3>
+                            </div>
+                            <div class="hf-col-overlay">
+                                Buy ready to move new residential Flats/Apartments for sale in Mumbai, Maharashtra with latest specification and facilities.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hf-our-service">
+    <div class="container">
+        <h1 class="text-left text-dark" data-aos="fade-down" data-aos-duration="1000"><span class="hf-textblue">Our</span> Services</h1>
+        <p class="text-left pb-4">Our Services - An Award Winning Real Estate Advisory.</p>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <div class="card bg-light round p-2 aos-init aos-animate shadow border-0 " data-aos="flip-up" data-aos-duration="800">
+                    <div class="d-flex hf-ser-img-blk pt-3">
+                        <img src="assets/img/service-1.png" class="card-img-top hf-ser-img" alt="...">
+                    </div>
+                    <div class="card-body hf-our-body">
+                        <h5 class="hf-our-txt-1">Property</h5>
+                        <p class="card-text hf-our-txt-2">Equal blame belongs those who fail in their duty.</p>
+                        <p></p>
+                        <a href="/property" class="btn btn-secondary btn-sm text-center d-block m-auto">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card bg-light round p-2 aos-init aos-animate shadow border-0" data-aos="flip-up" data-aos-duration="800">
+                    <div class="d-flex hf-ser-img-blk pt-3">
+                        <img src="assets/img/service-2.png" class="card-img-top hf-ser-img" alt="...">
+                    </div>
+                    <div class="card-body hf-our-body">
+                        <h5 class="hf-our-txt-1">Home Loan</h5>
+                        <p class="card-text hf-our-txt-2">home loan is the driving force behind the Indian ..</p>
+                        <a href="/homeloan" class="btn btn-secondary btn-sm text-center d-block m-auto">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card bg-light round p-2 aos-init aos-animate shadow border-0" data-aos="flip-up" data-aos-duration="800">
+                    <div class="d-flex hf-ser-img-blk pt-3">
+                        <img src="assets/img/service-3.png" class="card-img-top hf-ser-img" alt="...">
+                    </div>
+                    <div class="card-body hf-our-body">
+                        <h5 class="hf-our-txt-1">Insurance</h5>
+                        <p class="card-text hf-our-txt-2">Insurance is the key to good financial planning.</p>
+                        <a href="/insurance" class="btn btn-secondary btn-sm text-center d-block m-auto">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3 ">
+                <div class="card bg-light round p-2 aos-init aos-animate shadow border-0" data-aos="flip-up" data-aos-duration="800">
+                    <div class="d-flex hf-ser-img-blk pt-3">
+                        <img src="assets/img/service-4.png" class="card-img-top hf-ser-img" alt="...">
+                    </div>
+                    <div class="card-body hf-our-body">
+                        <h5 class="hf-our-txt-1">Mutual Fund</h5>
+                        <p class="card-text hf-our-txt-2">A mutual fund is a pool of money managed by a prof.</p>
+                        <a href="/mutual-funds" class="btn btn-secondary btn-sm text-center d-block m-auto">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hf-top-p-coll ">
+    <div class="container ">
+        <div class="hf-top-p-coll-txt pb-3">
+            <!-- <h1 data-aos="fade-up" data-aos-duration="800">Properties in Mumbai</h1> -->
+            <h1 class="text-dark"><span class="hf-textblue">Properties in</span> Mumbai</h1>
+            <p>
+                Search Real Estate in Mumbai, Maharashtra - Buy, Sell and Rent Best Residential Properties in Mumbai by Real Property owners, Dealers, Builders and Real Estate Agents
+            </p>
+        </div>
+        <div class="hf-top-proj-coll">
+            <div class="row">
+                <div class="col-md-4 mb-3 hf-curser">
+                    <div routerLink="" class="text-decoration-none" (click)="onClickSearchByProp(residential)" data-aos="fade-right" data-aos-duration="800">
+                        <div class="hf-mum-prop-1 hf-top-coll shadow-sm rounded hf-overlay">
+
+                            <div class=" hf-mum-prop-txt">
+                                <h3 class="hf-descr text-white">Residential Apartments</h3>
+                                <h2 class="text-white"> Mumbai, Maharashtra</h2>
+                            </div>
+                            <div class="hf-col-overlay hf-mum-overlay">180 Properties</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 hf-curser">
+                    <div routerLink="" class="text-decoration-none" (click)="onClickSearchByProp(commercial)">
+                        <div class="hf-mum-prop-2 hf-top-coll shadow-sm rounded hf-overlay">
+
+                            <div class=" hf-mum-prop-txt">
+                                <h3 class="hf-descr text-white">Commercial Apartments</h3>
+                                <h2 class="text-white"> Mumbai, Maharashtra</h2>
+                            </div>
+                            <div class="hf-col-overlay hf-mum-overlay">180 Properties</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hf-curser">
+                    <div routerLink="" class="text-decoration-none" (click)="onClickSearchByProp(villa)" data-aos="fade-left" data-aos-duration="800">
+                        <div class="hf-mum-prop-3 hf-top-coll shadow-sm rounded hf-overlay">
+
+                            <div class=" hf-mum-prop-txt">
+                                <h3 class="hf-descr text-white">Residential Villa</h3>
+                                <h2 class="text-white"> Mumbai, Maharashtra</h2>
+                            </div>
+                            <div class="hf-col-overlay hf-mum-overlay">180 Properties</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hf_top_builder_in_mumbai">
+
+    <div class="container">
+        <div class="hf-top-p-coll-txt pb-3">
+            <!-- <h1 data-aos="fade-up" data-aos-duration="800">Properties in Mumbai</h1> -->
+            <h1 class="text-dark"><span class="hf-textblue">Top Builders </span>in Mumbai</h1>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4 ">
+                <div class="hf-top-builder-block ">
+                    <div routerLink="/searchpropertybydeveloper/Lodha Group">
+                        <div class="d-flex justify-content-evenly ">
+                            <div class="hf-builder-logo-img col-5">
+                                <img src="../assets/img/lodha_logo.webp" class="img-fluid">
+                            </div>
+                            <div class="col-7 p-3">
+                                <div>
+                                    <h3 class="text-uppercase">lodha group</h3>
+                                </div>
+                                <div>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="d-flex justify-content-evenly hf-border position-relative">
+                            <div class="hf-buil-exp col-5 w-50 p-3"><span class="hf-exp-sub">Experience</span><span class="hf-project-count"><b>50 year</b></span></div>
+                            <div class="hf-buil-project-count w-50 col-7 p-3"><span class="hf-pro-sub">Projects</span><span class="hf-project-count"><b>100</b></span></div>
+                        </div>
+                        <div class="d-flex justify-content-evenly p-3">
+                            <div class="col-12">
+                                <p>
+                                    Founded in 1980, Lodha Group is considered one of the world's leading real estate developers.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-evenly hf-blue p-3">
+                            <a href="" class="text-decoration-none text-white">View All Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="hf-top-builder-block ">
+                    <div routerLink="/searchpropertybydeveloper/Godrej Group">
+                        <div class="d-flex justify-content-evenly ">
+                            <div class="hf-builder-logo-img col-4">
+                                <img src="../assets/img/godrej-logo.webp" class="img-fluid">
+                            </div>
+                            <div class="col-8 p-3">
+                                <div>
+                                    <h3 class="text-uppercase">Godrej Properties</h3>
+                                </div>
+                                <div>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="d-flex justify-content-evenly hf-border position-relative">
+                            <div class="hf-buil-exp col-5 w-50 p-3"><span class="hf-exp-sub">Experience</span><span class="hf-project-count"><b>50 year</b></span></div>
+                            <div class="hf-buil-project-count w-50 col-7 p-3"><span class="hf-pro-sub">Projects</span><span class="hf-project-count"><b>100</b></span></div>
+                        </div>
+                        <div class="d-flex justify-content-evenly p-3">
+                            <div class="col-12">
+                                <p>
+                                    A business vertical of the gigantic Godrej conglomerate established in 1897,..
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-evenly hf-blue p-3">
+                            <a href="" class="text-decoration-none text-white">View All Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="hf-top-builder-block ">
+                    <div routerLink="/searchpropertybydeveloper/Piramal Group">
+                        <div class="d-flex justify-content-evenly ">
+                            <div class="hf-builder-logo-img col-5">
+                                <img src="../assets/img/pramallogo.webp" class="img-fluid">
+                            </div>
+                            <div class="col-7 p-3">
+                                <div>
+                                    <h3 class="text-uppercase">Piramal Group</h3>
+                                </div>
+                                <div>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                    <i class="fa fa-star hf-font-blue"></i>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="d-flex justify-content-evenly hf-border position-relative">
+                            <div class="hf-buil-exp col-5 w-50 p-3"><span class="hf-exp-sub">Experience</span><span class="hf-project-count"><b>11 year</b></span></div>
+                            <div class="hf-buil-project-count w-50 col-7 p-3"><span class="hf-pro-sub">Projects</span><span class="hf-project-count"><b>11</b></span></div>
+                        </div>
+                        <div class="d-flex justify-content-evenly p-3">
+                            <div class="col-12">
+                                <p>
+                                    Established in 2012, Piramal Realty is part of the flagship Piramal..
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-evenly hf-blue p-3">
+                            <a href="" class="text-decoration-none text-white">View All Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<app-horizon-know-slider></app-horizon-know-slider>
+<!-- 
+<section class="hf-new-pro-sec ">
+    <div class="container">
+        <div class="hf-top-p-coll-txt pb-3">
+            <h1 class="text-"><span class="hf-textblue"> New Projects</span> in Mumbai</h1>
+            <p>
+                Looking for 2, 3 or 4 BHK luxury apartments in Mumbai? Choose one from among the many luxurious properties across Mumbai by Horizon Finacial Plannners
+            </p>
+
+            <div class="row">
+                <div class="col-md-4 mb-3 hf-curser" *ngFor="let data of mumbaitopprojectdata">
+                    <a class="text-decoration-none" (click)="onclicktopPropall(data.PropertyID)">
+                        <div class="hf-mum-pro-3 hf-top-coll shadow-sm rounded-2 hf-overlay" style="background-image: url(assets/img/featuredimages/{{data.FeaturedImage}});" data-aos="zoom-out" fallback="assets/img/newPro1.jpg" data-aos-duration="800">
+
+                            <div class="hf-mum-des">
+                                <h2 class="text-white"> {{data.t2}}</h2>
+                                <h4 class="badge text-white hf-bg-blue"> NRI</h4>
+                                <h3 class="hf-descr text-white">{{data.PropertyName| reducelength:[22]}}</h3>
+                                <h2 class="text-white">{{data.Location}}</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section> -->
+<app-modal-c></app-modal-c>
+
+<!-- <section class="hf-offer-sec ">
+    <div class="container">
+        <div class="hf-offer-out-blk shadow">
+            <div class="hf-inner-border">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2 class="hf-offer-txt animate__animated animate__infinite animate__zoomIn">OFFER FOR HORIZON CUSTOMER</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-outline-light">KNOW MORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- <app-footer></app-footer> -->

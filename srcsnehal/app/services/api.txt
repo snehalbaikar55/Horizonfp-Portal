@@ -1,0 +1,183 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  loadfloorplanset: any;
+
+  constructor(
+    private HttpClient:HttpClient
+  ) { }
+
+  // getData(){
+  //  // return this.HttpClient.get('http://127.0.0.1:8000/api/location_wise');
+  // }
+  sendSearchData(data:any){
+    return this.HttpClient.post('http://127.0.0.1:8000/api/searchDataFront',data);
+  }
+  serchProjectbylocSer(data:any){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/searchProjectByLoc/'+data);
+  }
+  getLocation(){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/getLocation');
+  }
+  getalldataser(){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/getalldata');
+  }
+  searchByConstructionStatusSer(data:any){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/searchByConstructionStatus/'+data);
+  }
+  searchByProperTypeSer(data:any){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/searchByPropType/'+data);
+  }
+  loaddatabyidser(data:any)
+  {
+    return this.HttpClient.get('http://127.0.0.1:8000/api/loaddatabyid/'+data);
+  }
+
+  loadgallaryimgser(data:any)
+  {
+    return this.HttpClient.get('http://127.0.0.1:8000/api/loadgallaryimg/'+data);
+  }
+  loadfloorplanser(data:any){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/loadfloorplans/'+data);
+  }
+  topProMumbaiSer(){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/topProMumbai');
+  }
+  horizonbaseSer(){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/horizonknwndbase');
+  }
+  topNewProMumbaiSer(){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/topNewProMumbai');
+  }
+  emaildataSer(data:any){
+    return this.HttpClient.post('http://127.0.0.1:8000/api/basic_email',data);
+  }
+}
+
+================================================================
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  loadfloorplanset: any;
+
+  constructor(
+    private HttpClient:HttpClient
+  ) { }
+
+  // getData(){
+  //  // return this.HttpClient.get('http://127.0.0.1:8000/api/location_wise');
+  // }
+  sendSearchData(data:any){
+    return this.HttpClient.post('https://horizonfp.in/horizonfp_backend/api/searchDataFront',data);
+  }
+  serchProjectbylocSer(data:any){
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/searchProjectByLoc/'+data);
+  }
+  getLocation(){
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/getLocation');
+  }
+  getalldataser(){
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/getalldata');
+  }
+  searchByConstructionStatusSer(data:any){
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/searchByConstructionStatus/'+data);
+  }
+  searchByProperTypeSer(data:any){
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/searchByPropType/'+data);
+  }
+  loaddatabyidser(data:any)
+  {
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/loaddatabyid/'+data);
+  }
+
+  loadgallaryimgser(data:any)
+  {
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/loadgallaryimg/'+data);
+  }
+  loadfloorplanser(data:any){
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/loadfloorplans/'+data);
+  }
+  topProMumbaiSer(){
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/topProMumbai');
+  }
+  horizonbaseSer(){
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/horizonknwndbase');
+  }
+  topNewProMumbaiSer(){
+    return this.HttpClient.get('https://horizonfp.in/horizonfp_backend/api/topNewProMumbai');
+  }
+  emaildataSer(data:any){
+    return this.HttpClient.post('https://horizonfp.in/horizonfp_backend/api/basic_email',data);
+  }
+}
+
+====================================================
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  loadfloorplanset: any;
+
+  constructor(
+    private HttpClient:HttpClient
+  ) { }
+
+  // getData(){
+  //  // return this.HttpClient.get('http://127.0.0.1:8000/api/location_wise');
+  // }
+  sendSearchData(data:any){
+    return this.HttpClient.post('https://www.1stprelaunch.com/Admin_laravel/api/searchDataFront',data);
+  }
+  serchProjectbylocSer(data:any){
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/searchProjectByLoc/'+data);
+  }
+  getLocation(){
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/getLocation');
+  }
+  getalldataser(){
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/getalldata');
+  }
+  searchByConstructionStatusSer(data:any){
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/searchByConstructionStatus/'+data);
+  }
+  searchByProperTypeSer(data:any){
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/searchByPropType/'+data);
+  }
+  loaddatabyidser(data:any)
+  {
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/loaddatabyid/'+data);
+  }
+
+  loadgallaryimgser(data:any)
+  {
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/loadgallaryimg/'+data);
+  }
+  loadfloorplanser(data:any){
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/loadfloorplans/'+data);
+  }
+  topProMumbaiSer(){
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/topProMumbai');
+  }
+  horizonbaseSer(){
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/horizonknwndbase');
+  }
+  topNewProMumbaiSer(){
+    return this.HttpClient.get('https://www.1stprelaunch.com/Admin_laravel/api/topNewProMumbai');
+  }
+  emaildataSer(data:any){
+    return this.HttpClient.post('https://www.1stprelaunch.com/Admin_laravel/api/basic_email',data);
+  }
+}

@@ -1,0 +1,49 @@
+.maincard{
+    align-items: center;
+    width: 18rem;
+    height: 13rem;
+    border-radius: 15px !important;
+}
+
+.maincardus{
+    background-color: #063476;
+    color: white;
+    width: 80%;
+    height: 25%;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.maincardusimg{
+    display: flex;
+    align-items: center;
+}
+
+.maincardusimgog{
+    border-radius: 50%;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.cardbody{
+    padding: 20px 5px;
+    word-wrap: break-word;
+}
+
+.maincardq{
+    color: #f4511e;
+    font-size: large;
+}
+
+.carduinfo{
+    width: 70%;
+}
+
+.maincarduir{
+    width: auto;
+}
+
+
+.aftext{
+    margin-left: 1rem;
+    font-size: larger;
+}

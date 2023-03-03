@@ -1,0 +1,36 @@
+<section class="hf-know-base-Container">
+    <div class="container">
+        <div class="hf-top-p-coll-txt pb-3">
+            <h1><span class="hf-textblue">Our Recommendation</span><span class="aftext">for You</span> </h1>
+        </div>
+        <div class="">
+            <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let data of horizonbasedata">
+                    <div routerLink="" class="hf-card-blk" (click)="onclickPropall(data.PropertyID)">
+                        <div class="card  hf-hor-slide shadow mb-2 bg-body rounded" appBorderhighlight>
+                            <div class="overflow-hidden">
+                                <img src="Admin_angular/assets/img/featuredimg_admin/{{data.PropertyID}}/data.FeaturedImage}}" onerror="this.src='assets/defaultimg/himg.PNG';" class="" alt="...">
+                            </div>
+                            <div class="card-body hf-padd">
+                                <h4 class="card-title hf-cd-title hf-property-name">{{data.PropertyName| reducelength:[18]}}</h4>
+                                <h6 class="card-title hf-cd-sub-title hf-devloper-nm">{{data.Developer}}</h6>
+                                <div class="hf-pro-price"><i class="hf-rupee-symbol">&#8377; </i><span>{{data.Price}}</span></div>
+                                <div class="hf-pro-area"><i class="fa fa-area-chart"></i><span>{{data.t1}}</span></div>
+                                <div class="hf-pro-bhk"><i class="far fa-building"></i><span>{{data.te7}}</span></div>
+                                <div class="hf-pro-location"><i class="fa fa-map-marker"></i><span>{{data.Location}}</span></div>
+                                <p class="hf-text-sm"> </p>
+                                <hr>
+                                <div class="hf-btn-group d-flex">
+                                    <button type="button" class="btn  btn-outline-secondary rounded">Checkout</button>
+                                    <button type="button" class="btn  hf-bg-blue text-white rounded" data-bs-toggle="modal" data-bs-target="#myModal">Enquiry Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+
+            </owl-carousel-o>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,27 @@
+
+<section class="articles-base-container">
+    <div class="container">
+        <div class="hf-top-p-coll-txt pb-3">
+            <h1><span class="hf-textblue">Top Articals</span><span class="aftext">About Plots</span></h1>
+        </div>
+
+        <owl-carousel-o [options]="articlesOptions">
+            <ng-template carouselSlide *ngFor="let i of plotArticals">
+                <div routerLink="" class="hf-card-blk">
+                    <div class="card" style="width: 25rem;" >
+                        <img src="assets\articles\plots\{{i.img}}" class="card-img-top acardimg" alt="...">
+                        <div class="cardb">
+                          <p><small class="anews">News</small></p>
+                          <p class="card-text">{{i.decription | reducelength:100}}</p>
+                        </div>
+                        <div class="cardt">
+                            <h5 class="card-title cardttext">{{i.heading | reducelength:30}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+       
+        
+    </div>
+</section>

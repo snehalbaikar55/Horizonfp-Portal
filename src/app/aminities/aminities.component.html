@@ -1,0 +1,72 @@
+<!-- <div class="shadow p-3 mb-5 bg-white rounded" id="overview1">
+    <div class="overview-head p-4 aheading"><h4 class="hf-overview-txt">Amenities</h4></div>
+    <hr class="hf-hor-line">
+    <div class="shadow-none p-3 mb-5 bg-light rounded">
+      <div class="row p-3">
+        <div class="col-md-6 my-2">
+          <i class="fas fa-swimmer icon_style"></i>Swimming Pool
+        </div>
+        <div class="col-md-6 my-2">
+          <i class="fas fa-dumbbell icon_style"></i>Gymnasium
+        </div>
+        <div class="col-md-6 my-2">
+          <i class="fas fa-gamepad icon_style"></i>Indoor Games
+        </div>
+        <div class="col-md-6 my-2">
+          <i class="fas fa-home icon_style"></i>Multi Purpose Hall
+        </div>
+        <div class="col-md-6 my-2">
+          <i class="fas fa-chess icon_style"></i>Children Play Area
+        </div>
+        <div class="col-md-6 my-2">
+          <i class="fas fa-leaf icon_style"></i>Green Lawn
+        </div>
+        <div class="col-md-6 my-2">
+          <i class="fas fa-blind icon_style"></i>Senior Citizen Area
+        </div>
+        <div class="col-md-6 my-2">
+          <i class="fas fa-pray icon_style"></i>Meditation
+        </div>
+        <div class="col-md-6 my-2">
+          <i class="fas fa-user-lock icon_style"></i>Robust Security
+        </div>
+        <div class="col-md-6 my-2">
+          <i class="fas fa-street-view icon_style"></i>High Speed Elevators
+        </div>
+      </div>  
+    </div>
+    
+</div> -->
+
+
+<div class="amenties">
+
+    <div class="container">
+        <div class="containerheading">
+            <h4 class="amentiestitle">Amenities</h4>
+        </div>
+        <div class="row containerrow">
+            <div class="col-3 imgtitle" *ngFor="let i of amenitiesArray">
+                <div><img src="{{i.img}}" class="imgsize"></div>
+                <div>{{i.title}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="amenties">
+    <div class="container">
+        <div class="containerheading">
+            <h4 class="amentiestitle">Facilities</h4>
+        </div>
+        <div class="row containerrow">
+            <div class="col-3 imgtitle" *ngFor="let i of facilitiesArray">
+                <div><img src="{{i.img}}" class="imgsize"></div>
+                <div>{{i.title}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

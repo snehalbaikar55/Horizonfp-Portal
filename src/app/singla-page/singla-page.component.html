@@ -1,0 +1,582 @@
+<section class="hf-abt-profile-sec   mt-5  pt-5" *ngFor="let l of loaddata">
+    <div class="container">
+        <div class="hf-breadcrumb p-3">
+            <div class="">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{l.PropertyName}}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="hf-company-head mb-5">
+            <div class="d-flex justify-content-between">
+                <div class="hf-company-info-left">
+                    <div class="hf-comp-nm">
+                        <h2>{{l.PropertyName}}</h2>
+                    </div>
+                    <div class="hf-grp-nm">
+                        <h4 class="text-secondary">By {{l.Developer}} |
+                            <span>{{l.Location}}</span>
+                        </h4>
+                    </div>
+
+                </div>
+                <div class="hf-company-info-rt sprightinfo">
+                    <div class="css-pjrxll">
+                        <div class="hf-pric-container">
+                            <div class="hf-price-blk d-flex">
+                                <span class="hf-price">
+                                    <h4>{{l.te7}}</h4>
+                                </span>
+                                <span class="hf-price">
+                                    <h4>₹ {{l.Price}}</h4>
+                                </span>
+                                <span class="hf-price-sm">7.67 K/sq.ft</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="hf-gallary">
+            <div class="row">
+                <div class="col-8">
+                    <div class="hf-image-container text-center mb-5">
+                        <div class="image-con"><img src="Admin_angular/assets/img/galleryimg_admin/{{l.PropertyID}}/{{singleimg}}" onerror="this.src='assets/defaultimg/himg.PNG';" alt="gallery" id="preview" /></div>
+
+                        <div class="hf-img-prev scroll spdimg">
+                            <div class="hf-img-slide active" *ngFor="let imgs of loadgallimgdata">
+                                <img src="Admin_angular/assets/img/galleryimg_admin/{{l.PropertyID}}/{{imgs.FeaturedImage}}" onerror="this.src='assets/defaultimg/himg.PNG';" alt="image1" appAppImg />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="flex">
+                        <div class="hf-cmp-img-container"><img src="Admin_angular/assets/img/galleryimg_admin/{{l.PropertyID}}/{{sideimg1}}" onerror="this.src='assets/defaultimg/himg.PNG';" class="img-resposive" alt="image4" appAppImg /></div>
+                        <div class="hf-cmp-img-container"><img src="Admin_angular/assets/img/galleryimg_admin/{{l.PropertyID}}/{{sideimg2}}" onerror="this.src='assets/defaultimg/himg.PNG';" class="img-resposive" alt="image3" appAppImg /></div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="overview"></div>
+    <div class="hf-sticky-nav " (scroll)="onWindowScroll($event);" id="hfsticky">
+
+        <drag-scroll>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}overview" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Overview/Home</a></div>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}about" routerLinkActive="activebutton" ariaCurrentWhenActive="page">About Project</a> </div>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}floorplan" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Floor Plan</a></div>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}map" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Map</a></div>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}amenities" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Amenities</a></div>
+        </drag-scroll>
+
+    </div>
+
+    <div class="hf-loan-sec pt-5" *ngFor="let data of loaddata">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-8">
+                    <div class="p-5 shadow p-3 mb-5 bg-white rounded">
+                        <div class="overview-head">
+                            <h4 class="hf-overview-txt">Why {{data.PropertyName}}?</h4>
+                        </div>
+                        <div class="hf-overview-txt">
+                            <div>
+                                <p>{{data.d1}}</p>
+                                <p>{{data.d2}}</p>
+                                <p>{{data.d3}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="mt-5 mb-5 shadow-sm p-3 mb-5 bg-white rounded">
+                        <div class="overview-head p-4 spwhyheading">
+                            <h4 class="hf-overview-txt">{{data.PropertyName}} Overview</h4>
+                        </div>
+                        <hr class="hf-hor-line">
+
+                        <div class="flex-row d-flex flex-wrap overviewcardtext">
+                            <div class="col-3 p-3 hf-o-card-txt">Project Area<br><span>{{data.t6}}</span></div>
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Size<br><span>445.00 sq.ft. - 692.00 sq.ft.</span></div> -->
+                            <div class="col-3 p-3 hf-o-card-txt">Project Size<br><span>{{data.t2}}</span></div>
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Launch Date<br><span>Nov, 2012</span></div> -->
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Avg. Price<br><span>7.67 K/sq.ft</span></div> -->
+                            <div class="col-3 p-3 hf-o-card-txt">Offer<br><span>{{data.t4}}</span></div>
+                            <div id="about"></div>
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Possession Starts<br><span>Dec, 2022</span></div> -->
+                            <div class="col-3 p-3 hf-o-card-txt">Configurations<br><span>{{data.te7}}</span></div>
+                            <div class="col-3 p-3 hf-o-card-txt"></div>
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Rera Id<br><span>P99000004018, P990000</span></div> -->
+
+                        </div>
+                    </div>
+                    <div class="hf-single-abt">
+                        <div class="mt-5 mb-5 shadow p-3 mb-5 bg-white rounded">
+                            <div class="overview-head p-4">
+                                <h4 class="hf-overview-txt">About {{data.PropertyName}}</h4>
+                            </div>
+                            <hr class="hf-hor-line">
+                            <div id="floorplan"></div>
+                            <div class="flex-row d-flex flex-wrap p-3">
+                                <p class="hf-single-abt-txt">{{data.d1}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hf-single-abt">
+                        <div class="mt-5 mb-5 shadow-sm p-3 mb-5 bg-white rounded">
+                            <div class="overview-head p-4 spfpheading">
+                                <h4 class="hf-overview-txt"> {{data.PropertyName}} floor Plane</h4>
+                            </div>
+                            <hr class="hf-hor-line">
+                            <div class="p-3">
+                                <div class="row">
+                                    <div class="col-md-4 shadow-none p-3 mb-5 bg-light rounded" *ngFor="let fl of loadfloorplandata">
+                                        <div class="shadow-sm p-3 bg-white rounded">
+                                            <div>
+                                                <img src="Admin_angular/assets/img/floorplans_admin/{{data.PropertyID}}/{{fl.Image}}" onerror="this.src='assets/defaultimg/vimg.PNG';" class="floor" id="image">
+                                                <!--|| assets/defaultimg/vimg.PNG-->
+                                            </div>
+                                            <div class="text-center p-2 text-uppercase hf-bg-blue text-light ">
+                                                {{fl.Title|reducelength:10}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="shadow p-3 mb-5 bg-white rounded" id="map">
+                        <div class="overview-head p-4">
+                            <h4 class="hf-overview-txt">Map</h4>
+                        </div>
+                        <hr class="hf-hor-line">
+                        <div [innerHtml]="mapdata" id="mapcontainer"></div>
+                    </div>
+
+
+                    <div class="shadow p-3 mb-5 bg-white rounded">
+                        <div class="overview-head p-4">
+                            <h4 class="hf-overview-txt">Near By {{data.PropertyName}}</h4>
+                        </div>
+
+                        <div class="connplace">
+                            <div class="row">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-primary me-5 connplacebtn" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Commute</button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-secondary me-5 connplacebtn" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Entertainment</button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-success me-5 connplacebtn" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Essentials</button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-warning me-5 connplacebtn" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5">Health</button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-info me-5 connplacebtn" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample6" aria-expanded="false" aria-controls="multiCollapseExample6">Religious</button>
+                                </div>
+
+
+
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="col mt-2">
+                            <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                <div class="card card-body">
+
+                                    <div class="alert alert-primary" role="alert">
+                                        Commute
+                                    </div>
+
+                                    <!---->
+
+                                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingOne">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                                Railway Stations
+                                            </button>
+                                            </h2>
+                                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <div class="card card-body">
+
+                                                        <div class="row mt-2">
+                                                            <div class="col">Kharghar</div>
+                                                            <div class="col kmtime">27 km | 23 mins</div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row mt-2">
+                                                            <div class="col">Khandeshwar</div>
+                                                            <div class="col kmtime">15 km | 20 mins</div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row mt-2">
+                                                            <div class="col">Thane</div>
+                                                            <div class="col kmtime">05 km | 15 mins</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                Metro Stations
+                                            </button>
+                                            </h2>
+                                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <div class="card card-body">
+                                                        <div class="row mt-2">
+                                                            <div class="col">Sector 2E (Kalamboli)</div>
+                                                            <div class="col kmtime">21 km | 15 mins</div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row mt-2">
+                                                            <div class="col">Sector 10 (Kamothe)</div>
+                                                            <div class="col kmtime">15 km | 20 mins</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                Airports
+                                            </button>
+                                            </h2>
+                                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <div class="card card-body">
+                                                        <div class="row mt-2">
+                                                            <div class="col">Chhatrapati Shivaji International Airport</div>
+                                                            <div class="col kmtime">50 km | 50 mins</div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="row mt-2">
+                                                            <div class="col">Chhatrapati Shivaji Domestic Airport</div>
+                                                            <div class="col kmtime">50 km | 50 mins</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <!---->
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="col mt-2">
+                            <div class="collapse multi-collapse" id="multiCollapseExample3">
+                                <div class="card card-body">
+
+                                    <div class="alert alert-secondary" role="alert">
+                                        Entertainment
+                                    </div>
+
+                                    <div class="accordion accordion-flush" id="entertainmentExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="entertainment-headingOne">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entertainment-collapseOne" aria-expanded="false" aria-controls="entertainment-collapseOne">
+                                                  Movie
+                                                </button>
+                                            </h2>
+                                            <div id="entertainment-collapseOne" class="accordion-collapse collapse" aria-labelledby="entertainment-headingOne" data-bs-parent="#entertainmentExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="entertainment-headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entertainment-collapseTwo" aria-expanded="false" aria-controls="entertainment-collapseTwo">
+                                                Restaurants
+                                                </button>
+                                            </h2>
+                                            <div id="entertainment-collapseTwo" class="accordion-collapse collapse" aria-labelledby="entertainment-headingTwo" data-bs-parent="#entertainmentExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="entertainment-headingThee">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entertainment-collapseThree" aria-expanded="false" aria-controls="entertainment-collapseThree">
+                                                Bars
+                                                </button>
+                                            </h2>
+                                            <div id="entertainment-collapseThree" class="accordion-collapse collapse" aria-labelledby="entertainment-headingThee" data-bs-parent="#entertainmentExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="entertainment-headingFour">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entertainment-collapseFour" aria-expanded="false" aria-controls="entertainment-collapseFour">
+                                                Shopping Malls
+                                                </button>
+                                            </h2>
+                                            <div id="entertainment-collapseFour" class="accordion-collapse collapse" aria-labelledby="entertainment-headingFour" data-bs-parent="#entertainmentExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="entertainment-headingFive">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#entertainment-collapseFive" aria-expanded="false" aria-controls="entertainment-collapseFive">
+                                                Parks
+                                                </button>
+                                            </h2>
+                                            <div id="entertainment-collapseFive" class="accordion-collapse collapse" aria-labelledby="entertainment-headingFive" data-bs-parent="#entertainmentExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col mt-2">
+                            <div class="collapse multi-collapse" id="multiCollapseExample4">
+                                <div class="card card-body">
+
+                                    <div class="alert alert-success" role="alert">
+                                        Essentials
+                                    </div>
+
+                                    <div class="accordion accordion-flush" id="essentialsExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="essentials-headingOne">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#essentials-collapseOne" aria-expanded="false" aria-controls="essentials-collapseOne">
+                                                Groceries
+                                              </button>
+                                            </h2>
+                                            <div id="essentials-collapseOne" class="accordion-collapse collapse" aria-labelledby="essentials-headingOne" data-bs-parent="#essentialsExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="essentials-headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#essentials-collapseTwo" aria-expanded="false" aria-controls="essentials-collapseTwo">
+                                                Banks
+                                              </button>
+                                            </h2>
+                                            <div id="essentials-collapseTwo" class="accordion-collapse collapse" aria-labelledby="essentials-headingTwo" data-bs-parent="#essentialsExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="essentials-headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#essentials-collapseThree" aria-expanded="false" aria-controls="essentials-collapseThree">
+                                                ATM
+                                              </button>
+                                            </h2>
+                                            <div id="essentials-collapseThree" class="accordion-collapse collapse" aria-labelledby="essentials-headingThree" data-bs-parent="#essentialsExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="essentials-headingFour">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#essentials-collapseFour" aria-expanded="false" aria-controls="essentials-collapseFour">
+                                                Schools
+                                              </button>
+                                            </h2>
+                                            <div id="essentials-collapseFour" class="accordion-collapse collapse" aria-labelledby="essentials-headingFour" data-bs-parent="#essentialsExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col mt-2">
+                            <div class="collapse multi-collapse" id="multiCollapseExample5">
+                                <div class="card card-body">
+
+                                    <div class="alert alert-warning" role="alert">
+                                        Health
+                                    </div>
+
+                                    <div class="accordion accordion-flush" id="healthExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="health-headingOne">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#health-collapseOne" aria-expanded="false" aria-controls="health-collapseOne">
+                                                Hospitals
+                                              </button>
+                                            </h2>
+                                            <div id="health-collapseOne" class="accordion-collapse collapse" aria-labelledby="health-headingOne" data-bs-parent="#healthExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="health-headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#health-collapseTwo" aria-expanded="false" aria-controls="health-collapseTwo">
+                                                Pharmacies
+                                              </button>
+                                            </h2>
+                                            <div id="health-collapseTwo" class="accordion-collapse collapse" aria-labelledby="health-headingTwo" data-bs-parent="#healthExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="health-headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#health-collapseThree" aria-expanded="false" aria-controls="health-collapseThree">
+                                                Gym
+                                              </button>
+                                            </h2>
+                                            <div id="health-collapseThree" class="accordion-collapse collapse" aria-labelledby="health-headingThree" data-bs-parent="#healthExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col mt-2">
+                            <div class="collapse multi-collapse" id="multiCollapseExample6">
+                                <div class="card card-body">
+
+
+                                    <div class="alert alert-info" role="alert">
+                                        Religious
+                                    </div>
+
+                                    <div class="accordion accordion-flush" id="religiousExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="religious-headingOne">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#religious-collapseOne" aria-expanded="false" aria-controls="religious-collapseOne">
+                                                Temple
+                                              </button>
+                                            </h2>
+                                            <div id="religious-collapseOne" class="accordion-collapse collapse" aria-labelledby="religious-headingOne" data-bs-parent="#religiousExample">
+                                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="accordion-item">
+                                            <h2 class="accordion-header" id="religious-headingTwo">
+                                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#religious-collapseTwo" aria-expanded="false" aria-controls="religious-collapseTwo">
+                                                Accordion Item #2
+                                              </button>
+                                            </h2>
+                                            <div id="religious-collapseTwo" class="accordion-collapse collapse" aria-labelledby="religious-headingTwo" data-bs-parent="#religiousExample">
+                                              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="religious-headingThree">
+                                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#religious-collapseThree" aria-expanded="false" aria-controls="religious-collapseThree">
+                                                Accordion Item #3
+                                              </button>
+                                            </h2>
+                                            <div id="religious-collapseThree" class="accordion-collapse collapse" aria-labelledby="religious-headingThree" data-bs-parent="#religiousExample">
+                                              <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                                            </div>
+                                        </div> -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+                    <app-aminities id="amenities"></app-aminities>
+                    <app-backoffers></app-backoffers>
+                </div>
+                <!--end   -->
+                <div class="col-md-4">
+                    <div class="hf-sibar-container" (scroll)="onWindowScrollside($event);" id="hf-sidebar-sticky">
+                        <app-sidebar></app-sidebar>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-6"> -->
+    <app-modal-c></app-modal-c>
+    <!-- </div>
+        </div>
+    </div> -->
+
+
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-12"> -->
+
+    <!-- </div>
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+</section>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

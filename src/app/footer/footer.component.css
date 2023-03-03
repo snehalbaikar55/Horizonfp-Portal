@@ -1,0 +1,32 @@
+.fblock{
+    display: block;
+}
+
+
+.mainfooter{
+    background: #063476;
+    color: white;
+}
+
+.footerHeading{
+    color: white;
+}
+
+.footertitle{
+    font-size: xxx-large;
+    font-weight: 600;
+}
+
+.servicestitle{
+    font-weight: 600;
+}
+
+.titlefooter{
+    font-size: inherit;
+    color: white;
+    text-decoration: none;
+}
+
+ul li a{
+    color: white;
+}

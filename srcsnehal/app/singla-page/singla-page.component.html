@@ -1,0 +1,261 @@
+<section class="hf-abt-profile-sec   mt-5  pt-5" *ngFor="let l of loaddata">
+    <div class="container">
+        <div class="hf-breadcrumb p-3">
+            <div class="">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{l.PropertyName}}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="hf-company-head mb-5">
+            <div class="d-flex justify-content-between">
+                <div class="hf-company-info-left">
+                    <div class="hf-comp-nm">
+                        <h2>{{l.PropertyName}}</h2>
+                    </div>
+                    <div class="hf-grp-nm">
+                        <h4 class="text-secondary">By {{l.Developer}} |
+                            <span>{{l.Location}}</span>
+                        </h4>
+                    </div>
+
+                </div>
+                <div class="hf-company-info-rt">
+                    <div class="css-pjrxll">
+                        <div class="hf-pric-container">
+                            <div class="hf-price-blk d-flex">
+                                <span class="hf-price"><h4>{{l.te7}}</h4></span>
+                                <span class="hf-price"><h4>₹  {{l.Price}}</h4></span>
+                                <span class="hf-price-sm">7.67 K/sq.ft</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="hf-gallary">
+            <div class="row">
+                <div class="col-8">
+                    <div class="hf-image-container text-center mb-5">
+                        <div class="image-con"><img src="assets/img/galleryimages/{{singleimg}}" alt="gallery" id="preview" /></div>
+
+                        <div class="hf-img-prev scroll">
+                            <div class="hf-img-slide active" *ngFor="let imgs of loadgallimgdata">
+                                <img src="assets/img/galleryimages/{{imgs.FeaturedImage}}" alt="image1" appAppImg/>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="flex">
+                        <div class="hf-cmp-img-container"><img src="assets/img/galleryimages/{{sideimg1}}" class="img-resposive" alt="image4" appAppImg/></div>
+                        <div class="hf-cmp-img-container"><img src="assets/img/galleryimages/{{sideimg2}}" class="img-resposive" alt="image3" appAppImg/></div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="overview"></div>
+    <div class="hf-sticky-nav " (scroll)="onWindowScroll($event);" id="hfsticky">
+
+        <drag-scroll>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}overview" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Overview/Home</a></div>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}about" routerLinkActive="activebutton" ariaCurrentWhenActive="page">About Project</a> </div>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}floorplan" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Floor Plan</a></div>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}map" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Map</a></div>
+            <div class="dragContent hf-nax-txt" drag-scroll-item><a href="singlePage/pid{{showid}}amenities" routerLinkActive="activebutton" ariaCurrentWhenActive="page">Amenities</a></div>
+        </drag-scroll>
+
+    </div>
+
+    <div class="hf-loan-sec pt-5" *ngFor="let data of loaddata">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-md-8">
+                    <div class="hf-overview-container p-5">
+                        <div class="overview-head">
+                            <h4 class="hf-overview-txt">Why {{data.PropertyName}}?</h4>
+                        </div>
+                        <div class="hf-overview-txt">
+                            <div>
+                                <p>{{data.d1}}</p>
+                                <p>{{data.d2}}</p>
+                                <p>{{data.d3}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="overview-block2 card mt-5 mb-5 ">
+                        <div class="overview-head p-4">
+                            <h4 class="hf-overview-txt">{{data.PropertyName}} Overview</h4>
+                        </div>
+                        <hr class="hf-hor-line">
+
+                        <div class="flex-row d-flex flex-wrap">
+                            <div class="col-3 p-3 hf-o-card-txt">Project Area<br><span>{{data.t6}}</span></div>
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Size<br><span>445.00 sq.ft. - 692.00 sq.ft.</span></div> -->
+                            <div class="col-3 p-3 hf-o-card-txt">Project Size<br><span>{{data.t2}}</span></div>
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Launch Date<br><span>Nov, 2012</span></div> -->
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Avg. Price<br><span>7.67 K/sq.ft</span></div> -->
+                            <div class="col-3 p-3 hf-o-card-txt">Offer<br><span>{{data.t4}}</span></div>
+                            <div id="about"></div>
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Possession Starts<br><span>Dec, 2022</span></div> -->
+                            <div class="col-3 p-3 hf-o-card-txt">Configurations<br><span>{{data.te7}}</span></div>
+                            <div class="col-3 p-3 hf-o-card-txt"></div>
+                            <!-- <div class="col-3 p-3 hf-o-card-txt">Rera Id<br><span>P99000004018, P990000</span></div> -->
+
+                        </div>
+                    </div>
+                    <div class="hf-single-abt">
+                        <div class="overview-block2 card mt-5 mb-5 ">
+                            <div class="overview-head p-4">
+                                <h4 class="hf-overview-txt">About {{data.PropertyName}}</h4>
+                            </div>
+                            <hr class="hf-hor-line">
+                            <div id="floorplan"></div>
+                            <div class="flex-row d-flex flex-wrap p-3">
+                                <p class="hf-single-abt-txt">{{data.d1}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hf-single-abt">
+                        <div class="overview-block2 card mt-5 mb-5 ">
+                            <div class="overview-head p-4">
+                                <h4 class="hf-overview-txt"> {{data.PropertyName}} floor Plane</h4>
+                            </div>
+                            <hr class="hf-hor-line">
+                            <div class="p-3">
+                                <div class="row">
+                                    <div class="col-md-4" *ngFor="let fl of loadfloorplandata">
+                                        <div class="">
+                                            <img src="assets/img/floorplanimages/{{fl.Image}}" alt="{{fl.Image}}" width="200" height="300" class="floor">
+                                        </div>
+                                        <div class="text-center p-2 text-uppercase hf-bg-blue text-light ">{{fl.Title}}</div>
+                                    </div>
+                                </div>
+                                <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">1 BHK</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">2 BHK</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">3 BHK</button>
+                                            </li>
+                                            
+                                        </ul>
+                                            <div class="tab-content p-3" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                                                      
+                                                              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                                <li class="nav-item" role="presentation">
+                                                                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">396.00 sq.ft</button>
+                                                                </li>
+                                                                <li class="nav-item" role="presentation">
+                                                                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">398.00 sq.ft</button>
+                                                                </li>
+                                                                <li class="nav-item" role="presentation">
+                                                                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">400.00 sq.ft</button>
+                                                                </li>
+                                                                
+                                                              </ul>
+                                                              <div class="tab-content" id="pills-tabContent">
+                                                                <div class="tab-pane fade show active p-5" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                                                                  <img src="assets/img/floorplan.webp" alt=" " width="200px"/>
+                                                                  <div class="flex"><button type="button" class="hf-bg-blue btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#myModal">
+                                                                    Request Floor Plan
+                                                                  </button></div>
+                                                                </div>
+                                                                <div class="tab-pane fade p-5" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"><img src="assets/img/floorplan.webp" alt="" width="200px"/></div>
+                                                                <div class="tab-pane fade p-5" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0"><img src="" alt=""/></div>
+                                                              </div>
+                                                      
+                                                    
+                                                </div>
+                                                <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"><Br>
+                                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">396.00 sq.ft</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">398.00 sq.ft</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">400.00 sq.ft</button>
+                                                        </li>
+                                                        
+                                                      </ul>
+                                                      <div class="tab-content" id="pills-tabContent">
+                                                        <div class="tab-pane fade show active p-5" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"><img src="assets/img/floorplan.webp" alt="" width="200px"/></div>
+                                                        <div class="tab-pane fade p-5" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"><img src="assets/img/floorplan.webp" alt="" width="200px"/></div>
+                                                        <div class="tab-pane fade p-5" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0"><img src="" alt=""/></div>
+                                                      </div>.
+                                                </div>
+                                                <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                                                    
+                                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                        <li class="nav-item" role="presentation">
+                                                          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">396.00 sq.ft</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">398.00 sq.ft</button>
+                                                        </li>
+                                                        <li class="nav-item" role="presentation">
+                                                          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">400.00 sq.ft</button>
+                                                        </li>
+                                                        
+                                                      </ul>
+                                                      <div class="tab-content" id="pills-tabContent">
+                                                        <div class="tab-pane fade show active p-5" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0"><img src="assets/img/floorplan.webp" alt="" width="200px"/></div>
+                                                        <div class="tab-pane fade p-5" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0"><img src="assets/img/floorplan.webp" alt="" width="200px"/></div>
+                                                        <div class="tab-pane fade p-5" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0"><img src="assets/img/floorplan.webp" alt="" width="200px"/></div>
+                                                      </div>
+                                                </div>
+                                                
+                                            </div> -->
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="overview-block2 card mt-5 mb-5 " id="map">
+                        <div class="overview-head p-4">
+                            <h4 class="hf-overview-txt">Map</h4>
+                        </div>
+                        <hr class="hf-hor-line">
+                        <div [innerHtml]="mapdata" id="mapcontainer"></div>
+                    </div>
+
+                    <app-aminities id="amenities"></app-aminities>
+                </div>
+                <!--end   -->
+                <div class="col-md-4">
+                    <div class="hf-sibar-container" (scroll)="onWindowScrollside($event);" id="hf-sidebar-sticky">
+                        <app-sidebar></app-sidebar>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-modal-c></app-modal-c>
+
+
+</section>
+<!-- <router-outlet></router-outlet> -->

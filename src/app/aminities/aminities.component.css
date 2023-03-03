@@ -1,0 +1,41 @@
+.icon_style {
+    font-size: 2vw;
+    color: #010941;
+    padding-right: 47px;
+}
+
+.aheading{
+    text-align: center;
+}
+
+
+.container{
+    background: white;
+    padding: 40px 15px 40px 15px;
+    border-radius: 10px;
+    margin: 1rem 0rem;
+    border: 1.1px solid #80808047;
+}
+
+.imgtitle{
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+}
+
+.imgsize{
+    width: 30%;
+    
+}
+
+.containerrow{
+    margin: 1rem 0rem;
+}
+
+.amentiestitle{
+    font-size: 20px;
+}
+
+.containerheading{
+    padding-left: 15px;
+    height: 50px;
+}

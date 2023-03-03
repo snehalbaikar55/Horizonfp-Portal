@@ -1,0 +1,104 @@
+<section class="hf-about-banner hf-bg-blue text-light hf-property-banner">
+    <div class="container">
+        <div class="hf-about-head text-center">
+            <h1>Contact Us</h1>
+        </div>
+    </div>
+</section>
+
+<section class="hf-loan-sec p-4 position-relative">
+    <div class="hf-breadcrumb p-3">
+        <div class="container-xxl">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item "><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active " aria-current="page">Contact Us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container-xxl">
+        <div class="card p-5 shadow-sm">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="hf-off-blk text-center">
+                            <i class="fa fa-home hf-contact-icon"></i>
+                            <h5>OFFICE ADDRESS</h5>
+                            <p>Horizon Financial Planners Shop No. 7, Shramsaflya CHS., Bulding No. 66, Near Abhyudaya Bank, Nehru Nagar, Kurla East Mumbai - 400 024</p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="hf-off-blk text-center ">
+                            <i class="fa fa-phone hf-contact-icon" aria-hidden="true"></i>
+                            <h5>PHONES</h5>
+                            <p>9833717888</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="hf-off-blk text-center ">
+                            <i class="fa fa-envelope hf-contact-icon"></i>
+                            <h5>E-MAIL</h5>
+                            <p>info@horizonfp.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="hf-map mt-5 p-5">
+                        <h2 class="mb-4 text-center">Map</h2>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15084.22660250328!2d72.8869109!3d19.0612467!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc3c3261035496c30!2sHorizon%20Financial%20%26%20Properties%20Advisers%20LLP!5e0!3m2!1sen!2sin!4v1659001068495!5m2!1sen!2sin"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="hf-contact-form mt-5 p-5">
+                        <h2 class="mb-4 text-center">Contact Us</h2>
+                        <form [formGroup]="Contactform" method="post" class="contact-form" id="contact-form">
+                            <div class="form-floating mb-3">
+                                <input type="name" formControlName="name" class="form-control" id="floatingName" placeholder="name">
+                                <!-- <label for="floatingName">Name</label> -->
+                                <div *ngIf="Contactform.controls['name'].invalid && Contactform.controls['name'].touched" class="alert alert-danger">
+                                    <div *ngIf="Contactform.controls['name'].errors?.['required']">
+                                        Name is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" formControlName="email" class="form-control" id="floatingEmail" placeholder="Email">
+                                <!-- <label for="floatingEmail">Email address</label> -->
+                                <div *ngIf="Contactform.controls['email'].invalid && Contactform.controls['email'].touched" class="alert alert-danger">
+                                    <div *ngIf="Contactform.controls['email'].errors?.['required']">
+                                        Email is required.
+                                    </div>
+                                    <p>Invalid format</p>
+                                </div>
+
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="mobile" formControlName="mobile" class="form-control" id="floatingMobile" placeholder="Mobile">
+                                <!-- <label for="floatingInput">Mobile</label> -->
+                                <div *ngIf="Contactform.controls['mobile'].invalid && Contactform.controls['mobile'].touched" class="alert alert-danger">
+                                    <div *ngIf="Contactform.controls['mobile'].errors?.['required']">
+                                        Mobile is required.
+                                    </div>
+                                    <div *ngIf="Contactform.controls['mobile'].errors?.['maxLength']">
+                                        Mobile is maxLength 10 required.
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button type="button" (click)="submitForm()" class="btn btn-primary hf-bg-blue" name="submit_contact_form">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- <app-footer></app-footer> -->

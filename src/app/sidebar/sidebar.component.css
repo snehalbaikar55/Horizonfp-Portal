@@ -1,0 +1,11 @@
+.sheading{
+    text-align: center;
+    font-weight: 800;
+}
+
+.sbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

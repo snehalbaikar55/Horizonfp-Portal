@@ -1,0 +1,169 @@
+#propid {
+    display: none;
+}
+
+.hf-btn-contact {
+    display: block;
+    float: right;
+    margin-right: 2px;
+}
+
+
+/* slider css */
+
+.price-input {
+    display: flex;
+    margin: 30px 0 35px;
+    width: 100%;
+}
+
+.price-input .field {
+    height: 45px;
+    display: flex;
+    /* background-color: #b7c7de; */
+    width: 100%;
+    align-items: center;
+}
+
+.field input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    outline: none!important;
+    border-radius: 5px!important;
+    margin-left: 12px;
+}
+
+.price-input .separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+}
+
+.slider {
+    height: 2px;
+    background: #b7c7de;
+    border-radius: 5px;
+}
+
+.slider .progress {
+    height: 5px;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #b7c7de;
+}
+
+.range-input {
+    position: relative;
+}
+
+.range-inpute input {
+    position: absolute;
+    top: 123px!important;
+    height: 2px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    /* -webkit-appearance: none; */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    background: #b7c7de;
+}
+
+input[type="range"]::-moz-slider-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    pointer-events: auto;
+    /* -webkit-appearance: none; */
+    background: #b7c7de;
+}
+
+.form-check-input {
+    border: 1px solid rgba(0, 0, 0, .25)!important;
+    border-radius: 50%!important;
+}
+
+.dropdown-menu {
+    width: 30rem!important;
+    top: 0px!important;
+}
+
+#drp {
+    width: 30rem!important;
+    top: 33px!important;
+}
+
+.custom-slider .ngx-slider .ngx-slider-bar {
+    background: #ffe4d1;
+    height: 5px;
+}
+
+.custom-slider .ngx-slider .ngx-slider-selection {
+    background: orange;
+}
+
+.custom-slider .ngx-slider .ngx-slider-pointer {
+    width: 10px;
+    height: 15px;
+    top: auto;
+    /* to remove the default positioning */
+    bottom: 0;
+    background-color: blue;
+}
+
+.custom-slider .ngx-slider .ngx-slider-pointer:after {
+    display: none;
+}
+
+.custom-slider .ngx-slider .ngx-slider-bubble {
+    bottom: 14px;
+}
+
+.custom-slider .ngx-slider .ngx-slider-limit {
+    font-weight: bold;
+    color: red;
+}
+
+.custom-slider .ngx-slider .ngx-slider-tick {
+    width: 1px;
+    height: 15px;
+    margin-left: 4px;
+    border-radius: 0;
+    background: black;
+    top: -1px;
+}
+
+.custom-slider .ngx-slider .ngx-slider-tick.ngx-slider-selected {
+    background: rgb(0, 110, 255);
+}
+
+.showdrp {
+    display: block;
+}
+
+.hidedrp {
+    display: none;
+}
+
+.ngx-slider .ngx-slider-pointer {
+    background-color: #416496!important;
+}
+
+
+/* .ngx-slider {
+    background-color: #063476!important;
+} */
+
+.custom-slider .ng5-slider .ng5-slider-bar {
+    height: 2px;
+}

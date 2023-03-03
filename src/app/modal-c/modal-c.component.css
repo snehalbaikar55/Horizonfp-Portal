@@ -1,0 +1,12 @@
+.mcheading{
+    font-weight: lighter;
+}
+
+.mcsbtn{
+    display: flex;
+    justify-content: center;
+}
+
+.scinputlable{
+    font-weight: lighter;
+}
