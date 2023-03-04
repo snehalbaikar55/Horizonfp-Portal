@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
 })
 export class ContactComponent implements OnInit {
   Contactform!: FormGroup;
-  isSubmitted!: boolean;
+  isSubmitted:any;
   name: any;
   email: any;
   mobile: any;
@@ -27,7 +27,8 @@ export class ContactComponent implements OnInit {
     
   }
   submitForm(){
-    this.isSubmitted = true;  
+    // alert("hi")
+    this.isSubmitted=false;
     if (this.Contactform.invalid) {  
       return  
     }  
@@ -35,8 +36,7 @@ export class ContactComponent implements OnInit {
     //console.log("Email :- "+this.form['email'].value)  
     //console.log("Mobile :- "+this.form['mobile'].value)  
     this.dataservice.emaildataSer(this.Contactform.getRawValue()).subscribe(res=>{
-      this.emaildata = res;
-    
+      this.isSubmitted  = res;
     })
     //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.Contactform.getRawValue()));
   }

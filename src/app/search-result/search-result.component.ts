@@ -471,5 +471,9 @@ show_property_by_developername(developername:any){
     this.propertyData=res;
   })
 }
-
+onChangeLocation(event:any){
+  this.dataservice.search_prop_by_location_Ser(event.target.value).subscribe(res=>{
+    this.propertyData=res;
+  })
+}
 }

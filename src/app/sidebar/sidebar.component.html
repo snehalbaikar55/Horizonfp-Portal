@@ -41,6 +41,13 @@
             <div class="sbtn">
                 <button type="button" (click)="submitForm()" class="btn btn-primary hf-bg-blue ssbtn">Submit</button>
             </div>
+            <div class="row pt-4" *ngIf="isSubmitted">
+                <div class="col-xs-12">
+                    <p class="alert alert-success">
+                        <strong>Email Sent Successfully!</strong>
+                    </p>
+                </div>
+            </div>
         </form>
     </div>
 </div>

@@ -68,4 +68,7 @@ export class DataService {
   searchbhkbynameSer(bhk:any){
     return this.HttpClient.get('http://127.0.0.1:8000/api/show_property_by_bhk/'+bhk);
   }
+  search_prop_by_location_Ser(data:any){
+    return this.HttpClient.get('http://127.0.0.1:8000/api/show_property_by_location_or_builder/'+data);
+  }
 }

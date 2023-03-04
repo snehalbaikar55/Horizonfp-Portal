@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
 })
 export class SidebarComponent implements OnInit {
   Contactform!: FormGroup;
-  isSubmitted!: boolean;
+  isSubmitted:any;
   name: any;
   email: any;
   mobile: any;
@@ -26,7 +26,7 @@ export class SidebarComponent implements OnInit {
     
   }
   submitForm(){
-    this.isSubmitted = true;  
+    this.isSubmitted = false;  
     if (this.Contactform.invalid) {  
       return  
     }  
@@ -34,7 +34,7 @@ export class SidebarComponent implements OnInit {
     console.log("Email :- "+this.form['email'].value)  
     console.log("Mobile :- "+this.form['mobile'].value)  
     this.dataservice.emaildataSer(this.Contactform.getRawValue()).subscribe(res=>{
-      this.emaildata = res;
+      this.isSubmitted = res;
     
     })
     //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.Contactform.getRawValue()));

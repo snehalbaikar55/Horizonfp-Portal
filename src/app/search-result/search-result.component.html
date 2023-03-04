@@ -13,14 +13,14 @@
                         <li><a class="dropdown-item" href="#">Agent</a></li>
                         <li><a class="dropdown-item" href="#">Project</a></li>
                     </ul>
-                    <input type="text" class="form-control w-100" name="searchbyloc" placeholder="  Search by location or Property Name">
+                    <input type="text" class="form-control w-100" name="searchbyloc" placeholder="  Search by location or Property Name" (change)="onChangeLocation($event)">
                 </div>
 
 
                 <div class="btn-group srheaderresult">
                     <button class="btn btn-secondary btn-md dropdown-toggle srpannelbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      BHK
-                                    </button>
+                        BHK
+                    </button>
                     <ul class="dropdown-menu p-3">
                         <div class="form-check" *ngFor="let bk of bhkvalue">
                             <input class="form-check-input" name="bhk_search" type="checkbox" value="{{bk}}" (change)="onCheckboxChange($event)">{{bk}} &nbsp; BHK
@@ -177,8 +177,8 @@
 
                     <div class="row spcardm">
                         <!-- <div class="hf-no-data" [innerHTML]="dynamicData"></div> -->
-                        <ng-container *ngIf="(propertyData| searchresult:bhk_search:conTypesearch:protypesearch:searchbyloc) as result">
-                            <div class="card m2card shadow bg-body rounded" *ngFor="let data of propertyData| searchresult:bhk_search:conTypesearch:protypesearch:searchbyloc|paginate:{itemsPerPage: 4, currentPage:p}" appBorderhighlight>
+                        <ng-container *ngIf="(propertyData| searchresult:bhk_search:protypesearch:searchbyloc) as result">
+                            <div class="card m2card shadow bg-body rounded" *ngFor="let data of propertyData| searchresult:bhk_search:protypesearch:searchbyloc|paginate:{itemsPerPage: 4, currentPage:p}" appBorderhighlight>
 
                                 <div class="col-4">
                                     <img src='Admin_angular/assets/img/featuredimg_admin/{{data.PropertyID}}/{{data.FeaturedImage}}' onerror="this.src='assets/defaultimg/himg.PNG';" class="card-img-top m2cardimg" alt="img not uploaded">
